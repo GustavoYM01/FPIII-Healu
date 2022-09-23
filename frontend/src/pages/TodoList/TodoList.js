@@ -5,9 +5,11 @@ import {
   query,
   where,
   onSnapshot,
-  doc,
-  setDoc,
+  Timestamp,
   addDoc,
+  doc,
+  getDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import MenuNavigation from "../../components/MenuNavigation";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
+import TodoPatients from "../../components/TodoPatients";
 
 const dayOfWeek = () => {
   let semana = [
@@ -39,22 +42,25 @@ const TodoList = () => {
   const [horario, setHorario] = useState("");
   const [afazer, setAfazer] = useState("");
   const [paciente, setPaciente] = useState("");
+  const [afazeresPaciente, setAfazeresPaciente] = useState([]);
 
   const currentUser = auth.currentUser.uid;
+  let usersUseEffect = [];
+  let afazeresEffect = [];
 
   useEffect(() => {
     const usersRef = collection(db, "users");
     const q = query(usersRef, where("uid", "not-in", [currentUser]));
     const unsub = onSnapshot(q, (querySnapshot) => {
-      let users = [];
       querySnapshot.forEach((doc) => {
-        users.push(doc.data());
+        usersUseEffect.push(doc.data());
       });
-      setUsers(users);
-      if (users.length === 1) {
-        setPaciente(users[0].userName);
-      }
+      setUsers(usersUseEffect);
     });
+    if (users.length === 1) {
+      setPaciente(users[0].userName);
+    }
+    // console.log(users);
     return () => unsub();
   }, []);
 
@@ -67,23 +73,45 @@ const TodoList = () => {
     fade.classList.toggle("hide");
   }
 
+  let todoPatient;
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await addDoc(collection(db, "to-doPatients", currentUser, "to-do"), {
+      todoPatient = await addDoc(collection(db, "to-doPatients"), {
         horario,
         afazer,
         paciente,
+        createdAt: Timestamp.fromDate(new Date()),
+        from: currentUser,
       });
+      if (paciente === "") {
+        await updateDoc(todoPatient, {
+          paciente: users[0].userName,
+        });
+      }
       toast.success("Afazer adicionado com sucesso!");
-      function reloadCurrentPage() {
+      function reloadPage() {
         window.location.reload();
       }
-      setTimeout(reloadCurrentPage, 3800);
+      setTimeout(reloadPage, 3900);
     } catch (error) {
+      console.log(`${error}` || `${error.message}`);
       toast.error("Erro, por favor tente mais tarde");
     }
   };
+
+  useEffect(() => {
+    const todoPatientsRef = collection(db, "to-doPatients");
+    const q = query(todoPatientsRef, where("from", "in", [currentUser]));
+    const unsub = onSnapshot(q, (querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        afazeresEffect.push(doc.data());
+      });
+      setAfazeresPaciente(afazeresEffect);
+    });
+    return () => unsub();
+  }, []);
 
   return (
     <div className="center_container">
@@ -98,7 +126,7 @@ const TodoList = () => {
       </button>
       <div id="modal" className="hide">
         <div className="modal_header">
-          <h3>Afazeres do Paciente</h3>
+          <h3>Afazer do Paciente</h3>
           <button id="btn_fecharModal" onClick={toggleModal}>
             X
           </button>
@@ -144,26 +172,13 @@ const TodoList = () => {
           </form>
         </div>
       </div>
-      {/* <div className="content_todolist">
-        <div className="times">
-          <p>07:00</p>
-          <div className="progress_bar"></div>
-          <p>09:00</p>
-          <div className="progress_bar"></div>
-          <p>10:00</p>
-          <div className="partial_progress_bar"></div>
-          <p id="no_concluded">13:15</p>
-          <div className="progress_bar" id="progress_bar_no_concluded"></div>
+      {afazeresPaciente.length > 0 ? (
+        <div className="todoPatients">
+          {afazeresPaciente.map((afazeres) => (
+            <TodoPatients key={afazeres.from} todo={afazeres} />
+          ))}
         </div>
-        <div className="todolist">
-          <ul>
-            <li>Café da manhã - lorem ipsum</li>
-            <li>Intervalo - lorem ipsum</li>
-            <li>Almoço - lorem ipsum</li>
-            <li>Intervalo 2 - lorem ipsum</li>
-          </ul>
-        </div>
-      </div> */}
+      ) : null}
     </div>
   );
 };

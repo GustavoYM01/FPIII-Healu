@@ -46,7 +46,7 @@ const SignIn = () => {
           id="input_userName"
           name="email"
           required
-          placeholder="Digite o e-mail"
+          placeholder="Digite o seu email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

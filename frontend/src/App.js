@@ -23,6 +23,7 @@ import Call from "./pages/Call/Call";
 import Profile from "./pages/Profile/Profile";
 import VideoCall from "./pages/Meeting/Meeting";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -74,6 +75,7 @@ function App() {
               path="/perfil"
               element={user ? <Profile /> : <Navigate to="/entrar" />}
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </AuthProvider>

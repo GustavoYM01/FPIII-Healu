@@ -21,6 +21,7 @@ a {
 
 #logo_form {
   margin-top: 4vh;
+  height: 8em;
 }
 
 .form_container {
@@ -35,10 +36,19 @@ a {
 
 .form_container .forgot_pass a {
   color: #fc693b;
+  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: 0.4s;
 }
 
 .form_container .forgot_pass a:hover {
-  color: #e43500;
+  color: #ff3c00;
+  background: linear-gradient(180deg, #e43500 0%, #ff1741 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .form_signin {
@@ -571,11 +581,15 @@ input[type="radio"]:checked {
   border-radius: 0.5rem;
 }
 
-#label_horario, #label_afazer, #label_paciente {
+#label_horario,
+#label_afazer,
+#label_paciente {
   margin-bottom: 1em;
 }
 
-#label_horario label, #label_afazer label, #label_paciente label {
+#label_horario label,
+#label_afazer label,
+#label_paciente label {
   margin-right: 1em;
 }
 
@@ -597,6 +611,22 @@ input[type="radio"]:checked {
 #fade.hide {
   opacity: 0;
   pointer-events: none;
+}
+
+.todoPatients {
+  background-color: #bebebe;
+  width: 80%;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2em 0 2em;
+}
+
+.todo {
+  width: 300px;
+  background-color: #e43500;
+  border: 1px solid #646464;
+  margin: 0 auto;
 }
 
 /************************************************** PROFILE **************************************************/
@@ -821,4 +851,40 @@ input[type="radio"]:checked {
 
 .input_roomName button:hover {
   background: linear-gradient(180deg, #ff4006 0%, #ff0b38 100%);
+}
+
+/********************************************** NOT FOUND PAGE **********************************************/
+
+#div_img {
+  position: absolute;
+  height: 3em;
+  width: 4em;
+  top: 2%;
+  left: 2%;
+  background: url("../../frontend/src/imgs/backward.svg") no-repeat center
+    center;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#not_foundDiv {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+#not_foundDiv img {
+  display: block;
+  height: 20em;
+  max-width: 100%;
+  margin: 4em auto 0 auto;
+  text-align: center;
+}
+
+#text_notFound h1,
+#text_notFound h2 {
+  max-width: 100%;
+  color: #afafaf;
+  text-align: center;
+  font-size: 3em;
 }
