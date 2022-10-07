@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -6,7 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 
-import { setDoc } from "firebase/firestore";
+import { setDoc, query, collection, where, getDocs } from "firebase/firestore";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,6 +21,25 @@ export default function FormDialog(props) {
   const [tituloAf, setTituloAf] = useState("");
   const [afazer, setAfazer] = useState("");
   const [paciente, setPaciente] = useState("");
+  const [user, setUser] = useState([]);
+
+  let arrayUser = [];
+
+  useEffect(() => {
+    // Para validação do login (ver se é ou não, um profissional da saúde)
+    const teste = async () => {
+      const q = query(
+        collection(db, "users"),
+        where("uid", "in", [currentUser])
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        arrayUser.push(doc.data());
+      });
+      setUser(arrayUser);
+    };
+    teste();
+  }, []);
 
   const handleEdit = async () => {
     try {
@@ -80,58 +99,126 @@ export default function FormDialog(props) {
             variant="standard"
             disabled
           />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="horario_edit"
-            label="Horário"
-            type="time"
-            defaultValue={props.horario}
-            fullWidth
-            variant="standard"
-            onChange={(e) => setHorario(e.target.value)}
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="tituloAf_edit"
-            label="Título afazer"
-            type="text"
-            defaultValue={props.tAfazer}
-            fullWidth
-            variant="standard"
-            onChange={(e) => setTituloAf(e.target.value)}
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="afazer_edit"
-            label="Afazer"
-            type="text"
-            defaultValue={props.afazer}
-            fullWidth
-            variant="standard"
-            onChange={(e) => setAfazer(e.target.value)}
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="paciente_edit"
-            label="Paciente"
-            type="text"
-            defaultValue={props.paciente}
-            fullWidth
-            variant="standard"
-            onChange={(e) => setPaciente(e.target.value)}
-          />
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="horario_edit"
+              label="Horário"
+              type="time"
+              defaultValue={props.horario}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setHorario(e.target.value)}
+            />
+          ) : (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="horario_edit"
+              label="Horário"
+              type="time"
+              defaultValue={props.horario}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setHorario(e.target.value)}
+              disabled
+            />
+          )}
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="tituloAf_edit"
+              label="Título afazer"
+              type="text"
+              defaultValue={props.tAfazer}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setTituloAf(e.target.value)}
+            />
+          ) : (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="tituloAf_edit"
+              label="Título afazer"
+              type="text"
+              defaultValue={props.tAfazer}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setTituloAf(e.target.value)}
+              disabled
+            />
+          )}
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="afazer_edit"
+              label="Afazer"
+              type="text"
+              defaultValue={props.afazer}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setAfazer(e.target.value)}
+            />
+          ) : (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="afazer_edit"
+              label="Afazer"
+              type="text"
+              defaultValue={props.afazer}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setAfazer(e.target.value)}
+              disabled
+            />
+          )}
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="paciente_edit"
+              label="Paciente"
+              type="text"
+              defaultValue={props.paciente}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setPaciente(e.target.value)}
+            />
+          ) : (
+            <TextField
+              autoFocus
+              margin="dense"
+              id="paciente_edit"
+              label="Paciente"
+              type="text"
+              defaultValue={props.paciente}
+              fullWidth
+              variant="standard"
+              onChange={(e) => setPaciente(e.target.value)}
+              disabled
+            />
+          )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="error">
-            Cancelar
-          </Button>
-          <Button onClick={handleEdit} color="primary">
-            Salvar
-          </Button>
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <Button onClick={handleClose} color="error">
+              Cancelar
+            </Button>
+          ) : (
+            <Button onClick={handleClose} color="error">
+              X
+            </Button>
+          )}
+          {user.length > 0 && user[0].isHealthProfessional !== false ? (
+            <Button onClick={handleEdit} color="primary">
+              Salvar
+            </Button>
+          ) : null}
         </DialogActions>
       </Dialog>
     </>

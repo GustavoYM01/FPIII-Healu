@@ -1,12 +1,40 @@
-import React, { useState } from "react";
-import { db } from "../firebase/config";
-import { doc, deleteDoc } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
+import { db, auth } from "../firebase/config";
+import {
+  doc,
+  deleteDoc,
+  query,
+  collection,
+  where,
+  getDocs,
+} from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FormDialog from "./Dialog";
 
 const TodoPatients = ({ todo }) => {
+  const currentUser = auth.currentUser.uid;
+
+  const [user, setUser] = useState([]);
   const [open, setOpen] = useState(false);
+
+  let arrayUser = [];
+
+  useEffect(() => {
+    // Para validação do login (ver se é ou não, um profissional da saúde)
+    const teste = async () => {
+      const q = query(
+        collection(db, "users"),
+        where("uid", "in", [currentUser])
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        arrayUser.push(doc.data());
+      });
+      setUser(arrayUser);
+    };
+    teste();
+  }, []);
 
   const handleClickEdit = () => {
     setOpen(true);
@@ -52,9 +80,11 @@ const TodoPatients = ({ todo }) => {
           <p>Paciente</p>
           <span id="nome_pac">{todo.paciente}</span>
         </div>
-        <button id="btn_excluir" onClick={() => handleDel(todo)}>
-          Deletar
-        </button>
+        {user.length > 0 && user[0].isHealthProfessional !== false ? (
+          <button id="btn_excluir" onClick={() => handleDel(todo)}>
+            Deletar
+          </button>
+        ) : null}
         <div id="details" onClick={() => handleClickEdit()}>
           <div>.</div>
           <div>.</div>
