@@ -52,7 +52,6 @@ const SignUp = () => {
       createdAt: Timestamp.fromDate(new Date()),
       isOnline: true,
     });
-    // console.log(user);
   };
 
   useEffect(() => {
@@ -63,15 +62,14 @@ const SignUp = () => {
 
   return (
     <div className="form_container">
-      <img id="logo_form" src={logoForm} alt="logo do formulário" />
+      <img id="logo_form2" src={logoForm} alt="logo do formulário" />
       <form className="form_signup" onSubmit={handleSubmit}>
-        <p>cadastrar</p>
         <input
           type="text"
           id="input_userName"
           name="userName"
           required
-          placeholder="Informe um nome de usuario"
+          placeholder="Digite um nome de usuario"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
@@ -80,7 +78,7 @@ const SignUp = () => {
           id="input_email"
           name="email"
           required
-          placeholder="Digite seu email"
+          placeholder="Digite um email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -89,7 +87,7 @@ const SignUp = () => {
           id="input_password"
           name="password"
           required
-          placeholder="Digite a sua senha"
+          placeholder="Digite uma senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -98,7 +96,7 @@ const SignUp = () => {
           id="input_confirm_password"
           name="confirmPassword"
           required
-          placeholder="Confirme sua senha"
+          placeholder="Confirme a senha"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
@@ -124,17 +122,17 @@ const SignUp = () => {
           <label>Não</label>
         </div>
         {!loading && (
-          <input type="submit" id="input_submit" value="criar conta" />
+          <input type="submit" id="input_submit2" value="Criar conta" />
         )}
         {loading && (
-          <input type="submit" id="input_submit" disabled value="aguarde..." />
+          <input type="submit" id="input_submit2" disabled value="aguarde..." />
         )}
       </form>
-      {error && <p className="error">{error}</p>}
-      <div id="after_form">
+      <div id="after_form2">
         <p>Já possui uma conta?</p>
         <a href="/entrar">Entre</a>
       </div>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

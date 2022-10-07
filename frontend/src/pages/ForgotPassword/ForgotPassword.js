@@ -40,7 +40,7 @@ const ForgotPassword = () => {
       </a>
       <ToastContainer autoClose={2000} />
       <main>
-        <form onSubmit={onSubmit}>
+        <form id="forgot_form" onSubmit={onSubmit}>
           <input
             type="email"
             id="input_email"

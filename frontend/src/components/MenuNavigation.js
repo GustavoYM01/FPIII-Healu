@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-import TodoList from "../imgs/calendar.svg";
-import Chat from "../imgs/message-square.svg";
-import Call from "../imgs/phone.svg";
+import ClipBoard from "../imgs/NewSvgs/Clipboard.svg";
+import Chat2 from "../imgs/NewSvgs/Chat.svg";
+import Call2 from "../imgs/NewSvgs/Call.svg";
 
-import SelectedTodoList from "../imgs/calendar_selected.svg";
-import SelectedChat from "../imgs/message-square_selected.svg";
-// import SelectedCall from "../imgs/phone_selected.svg";
+import SelectedClipBoard from "../imgs/NewSvgs/SelectedClipboard.svg";
+import SelectedChat2 from "../imgs/NewSvgs/SelectedChat.svg";
 
 function changeIcon(domImg, srcImage) {
   let img = new Image();
@@ -21,21 +20,17 @@ const MenuNavigation = ({ hrefPage }) => {
     let urlPage = hrefPage;
     const urlPageSplit = urlPage.split("/");
 
-    const todoListImg = document.getElementById("todolist");
-    const ChatImg = document.getElementById("chat");
-    // const CallImg = document.getElementById("call");
+    const clipBoard = document.getElementById("todolist");
+    const chat = document.getElementById("chat");
 
-    const todoList = SelectedTodoList;
-    const chat = SelectedChat;
-    // const call = SelectedCall;
+    const selectedClipBoard = SelectedClipBoard;
+    const selectedChat = SelectedChat2;
 
     if (urlPageSplit[3] === "lista") {
-      changeIcon(todoListImg, todoList);
+      changeIcon(clipBoard, selectedClipBoard);
     } else if (urlPageSplit[3] === "chat") {
-      changeIcon(ChatImg, chat);
-    } /* else if (urlPageSplit[3] === "/") {
-      changeIcon(CallImg, call);
-    } */
+      changeIcon(chat, selectedChat);
+    }
   }
 
   setTimeout(toggleIcon, 20);
@@ -45,17 +40,17 @@ const MenuNavigation = ({ hrefPage }) => {
       <ul>
         <li>
           <NavLink to="/lista">
-            <img id="todolist" src={TodoList} alt="Lembretes" />
+            <img id="todolist" src={ClipBoard} alt="Lembretes" />
           </NavLink>
         </li>
         <li>
           <NavLink to="/chat">
-            <img id="chat" src={Chat} alt="Chat" />
+            <img id="chat" src={Chat2} alt="Chat" />
           </NavLink>
         </li>
         <li>
           <NavLink to="/">
-            <img id="call" src={Call} alt="Ligação" />
+            <img id="call" src={Call2} alt="Ligação" />
           </NavLink>
         </li>
       </ul>

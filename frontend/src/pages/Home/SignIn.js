@@ -39,11 +39,11 @@ const SignIn = () => {
   return (
     <div className="form_container">
       <img id="logo_form" src={logoForm} alt="logo do formulário" />
+      <h1 id="logo_title">HEALU</h1>
       <form className="form_signin" onSubmit={handleSubmit}>
-        <p>entrar</p>
         <input
-          type="text"
-          id="input_userName"
+          type="email"
+          id="input_email"
           name="email"
           required
           placeholder="Digite o seu email"
@@ -60,20 +60,18 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div className="forgot_pass">
-          <a href="/esquecisenha">
-            Esqueci a senha
-          </a>
+          <a href="/esquecisenha">Esqueci a senha</a>
         </div>
-        {!loading && <input type="submit" id="input_submit" value="entrar" />}
+        {!loading && <input type="submit" id="input_submit" value="Login" />}
         {loading && (
           <input type="submit" id="input_submit" disabled value="aguarde..." />
         )}
       </form>
-      {error && <p className="error">{error}</p>}
       <div id="after_form">
         <p>Não possui conta?</p>
         <a href="/cadastrar">Cadastre-se</a>
       </div>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

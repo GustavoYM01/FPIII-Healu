@@ -1,8 +1,10 @@
-// import UserLogo from "../imgs/user.svg";
+
 import { useEffect, useState } from "react";
 import { db, auth } from "../firebase/config";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import User from "./User";
+import ArrowLeft from "../imgs/arrowLeft.svg";
+import ArrowRight from "../imgs/arrowRight.svg";
 
 const Sidebar = () => {
   const [users, setUsers] = useState([]);
@@ -23,11 +25,46 @@ const Sidebar = () => {
 
   const selectUser = (user) => {
     setChat(user);
-    // console.log(user);
+  };
+
+  const sideBar = document.querySelector(".sidebar");
+  const btnToggle = document.querySelector(".btn_toggle");
+  const menuNav = document.querySelector(".menu_navigation");
+  const arrowIcon = document.querySelector(".arrow_icon");
+
+  const toggleSidebar = () => {
+    if (sideBar && btnToggle && menuNav && arrowIcon) {
+      arrowIcon.src = ArrowLeft;
+      if (sideBar.style.marginLeft < "0") {
+        sideBar.style.marginLeft = "0";
+        menuNav.style.marginLeft = "0";
+        menuNav.style.opacity = "0";
+        if (menuNav.style.opacity === "0") {
+          menuNav.style.pointerEvents = "none";
+        }
+        btnToggle.style.marginLeft = "0";
+      } else {
+        arrowIcon.src = ArrowRight;
+        sideBar.style.marginLeft = "-15em";
+        menuNav.style.marginLeft = "-15em";
+        menuNav.style.opacity = "1";
+        menuNav.style.pointerEvents = "all";
+        btnToggle.style.marginLeft = "-15em";
+      }
+    }
   };
 
   return (
     <div className="sidebar">
+      {window.innerWidth <= 1000 ? (
+        <div className="btn_toggle" onClick={toggleSidebar}>
+          <img
+            className="arrow_icon"
+            src={ArrowRight || ArrowLeft}
+            alt="seta mostra menu"
+          />
+        </div>
+      ) : null}
       {users.map((user) => (
         <User key={user.uid} user={user} selectUser={selectUser} />
       ))}

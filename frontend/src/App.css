@@ -1,11 +1,24 @@
+/* VARS */
+:root {
+  --main_green: #32bf8a;
+  --dark_green1: #22815d;
+  --dark_green2: #009d61;
+  --white: #fff;
+  --black: #000;
+  --warning: #dc0000;
+  --warning_hover: #b80000;
+}
+
 /************************************************** GLOBAL STYLES **************************************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
 
 body {
   height: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 input:focus,
@@ -17,106 +30,101 @@ a {
   text-decoration: none;
 }
 
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
 /************************************************** SIGN IN part **************************************************/
 
 #logo_form {
-  margin-top: 4vh;
+  margin-top: 6vh;
   height: 8em;
+}
+
+#logo_title {
+  letter-spacing: 0.4em;
+  font-weight: 800;
 }
 
 .form_container {
   text-align: center;
-}
-
-.form_container .forgot_pass {
-  text-align: right;
-  margin-right: 1em;
-  margin-bottom: 1em;
-}
-
-.form_container .forgot_pass a {
-  color: #fc693b;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: 0.4s;
-}
-
-.form_container .forgot_pass a:hover {
-  color: #ff3c00;
-  background: linear-gradient(180deg, #e43500 0%, #ff1741 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-image: url("./imgs/bg_login.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
 }
 
 .form_signin {
-  background-color: #e1e1e1;
-  width: 25vw;
+  background-color: transparent;
+  width: 20em;
+  max-width: 90%;
   height: 19em;
-  margin: 40px auto auto auto;
-  border-radius: 44px;
+  margin: 40px auto 0 auto;
 }
 
-.form_signin p {
-  color: #b6b6b6;
-  padding-top: 1em;
-  font-size: 2em;
-}
-
+#input_email,
+#input_password,
 #input_userName,
-#input_password {
-  width: 90%;
+#input_confirm_password {
+  width: 100%;
+  height: 3em;
   display: block;
-  margin: 0 auto;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid 2px #b6b6b6;
-  color: #000;
-  background-color: #e1e1e1;
-  font-family: "Fredoka", sans-serif;
+  margin: 0 auto 1.4em auto;
+  color: var(--black);
+  background-color: var(--white);
+  border: 3px solid #333333;
+  border-radius: 20px;
+  font-family: "Nunito", sans-serif;
   font-size: 1em;
 }
 
-#input_userName {
-  margin-bottom: 2em;
-}
-
 #input_submit {
-  width: 90%;
+  width: 100%;
   height: 2em;
   margin-top: 1em;
   border: none;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  border-radius: 0.8em;
-  font-family: "Fredoka", sans-serif;
+  color: var(--black);
+  background: var(--main_green);
+  border-radius: 28px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 2em;
   transition: 0.4s;
   cursor: pointer;
 }
 
 #input_submit:hover {
-  background: linear-gradient(180deg, #ff3c00 0%, #ff274e 100%);
+  background: var(--dark_green2);
 }
 
-#after_form,
+#after_form {
+  margin-top: -3.5em;
+}
+
 #after_form p,
 #after_form a {
   display: inline-block;
   font-size: 1em;
+  font-weight: bold;
 }
 
 #after_form p {
-  color: #b6b6b6;
+  color: var(--black);
 }
 
 #after_form a {
   margin-left: 4px;
-  color: #fc693b;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  color: var(--main_green);
+  background: linear-gradient(
+    180deg,
+    var(--main_green) 0%,
+    var(--dark_green2) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -124,14 +132,64 @@ a {
 }
 
 #after_form a:hover {
-  color: #ff3c00;
-  background: linear-gradient(180deg, #e43500 0%, #ff1741 100%);
+  color: var(--main_green);
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* INPUTS */
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  box-sizing: border-box;
+  padding-left: 6px;
+  height: 2.6em;
+}
+
 /************************************************** FORGOT PASSWORD part **************************************************/
+
+#forgot_form {
+  width: 500px;
+}
+
+.forgot_pass {
+  text-align: right;
+  margin-right: 0.2em;
+  margin-top: -1em;
+}
+
+.forgot_pass a {
+  color: var(--main_green);
+  font-weight: bold;
+  background: linear-gradient(
+    180deg,
+    var(--main_green) 0%,
+    var(--dark_green2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.forgot_pass a:hover {
+  color: var(--main_green);
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .container {
   max-width: 35vw;
@@ -142,126 +200,109 @@ a {
   margin-top: 4em;
 }
 
-.btn_submit {
-  margin: 0 auto;
-  text-align: center;
-}
-
-input[type="email"] {
-  height: 1.5em;
-}
-
-input[type="submit"] {
-  width: 40%;
+.btn_submit input[type="submit"] {
+  width: 100%;
   height: 2em;
   border: none;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  border-radius: 0.8em;
-  font-family: "Fredoka", sans-serif;
+  color: var(--black);
+  background: var(--main_green);
+  border-radius: 28px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 2em;
+  transition: 0.4s;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background: linear-gradient(180deg, #ff3c00 0%, #ff274e 100%);
+.btn_submit input[type="submit"]:hover {
+  background: var(--dark_green2);
 }
 
 /************************************************** SIGN UP part **************************************************/
 
+#logo_form2 {
+  margin-top: 6vh;
+  margin-bottom: 1em;
+  height: 8em;
+}
+
 .form_signup {
-  background-color: #e1e1e1;
-  width: 25vw;
+  width: 20em;
+  max-width: 90%;
   height: 27em;
   margin: 0 auto;
   border-radius: 44px;
 }
 
-.form_signup p {
-  color: #b6b6b6;
-  padding-top: 1em;
-  font-size: 2em;
+#after_form2 {
+  margin-top: -0.5em;
 }
 
-#input_userName,
-#input_password,
-#input_email,
-#input_password,
-#input_confirm_password,
-#input_dob {
-  width: 90%;
-  display: block;
-  margin: 0 auto 1em auto;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid 2px #b6b6b6;
-  color: #000;
-  background-color: #e1e1e1;
-  font-family: "Fredoka", sans-serif;
+#after_form2 p,
+#after_form2 a {
+  display: inline-block;
   font-size: 1em;
+  font-weight: bold;
 }
 
-#input_submit {
-  width: 90%;
+#after_form2 a {
+  margin-left: 4px;
+  color: var(--main_green);
+  background: linear-gradient(
+    180deg,
+    var(--main_green) 0%,
+    var(--dark_green2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+#after_form2 a:hover {
+  color: var(--main_green);
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#input_submit2 {
+  width: 100%;
   height: 2em;
-  margin-top: 0.2em;
   border: none;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  border-radius: 0.8em;
-  font-family: "Fredoka", sans-serif;
+  color: var(--black);
+  background: var(--main_green);
+  border-radius: 28px;
+  font-family: "Nunito", sans-serif;
   font-size: 2em;
+  font-weight: bold;
   transition: 0.4s;
   cursor: pointer;
 }
 
-#input_submit:hover {
-  background: linear-gradient(180deg, #ff3c00 0%, #ff274e 100%);
-}
-
-#after_form,
-#after_form p,
-#after_form a {
-  display: inline-block;
-  font-size: 1em;
-}
-
-#after_form p {
-  color: #b6b6b6;
-}
-
-#after_form a {
-  margin-left: 4px;
-  color: #fc693b;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: 0.4s;
-}
-
-#after_form a:hover {
-  color: #ff3c00;
-  background: linear-gradient(180deg, #e43500 0%, #ff1741 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+#input_submit2:hover {
+  background: var(--dark_green2);
 }
 
 .error {
-  background-color: #ff3c00;
+  background-color: var(--dark_green1);
   max-width: 14em;
   text-align: center;
-  margin: 0.6em auto 0 auto;
+  margin: 0 auto 0 auto;
   font-size: 1.5em;
-  color: #fff;
+  color: var(--white);
   border-radius: 0.3em;
 }
 
 #question {
   font-size: 1em;
-  color: #646464;
+  color: var(--black);
+  font-weight: bold;
 }
 
 .yes,
@@ -278,12 +319,12 @@ input[type="radio"] {
   border-radius: 50%;
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 input[type="radio"]:checked {
   transition: 0.2s;
-  background-color: #fc693b;
+  background-color: #34eb52;
 }
 
 /************************************************** LOADING **************************************************/
@@ -300,9 +341,30 @@ input[type="radio"]:checked {
   height: 100vh;
   width: 15em;
   background-color: #d4d4d4;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  transition: 0.2s;
+}
+
+.btn_toggle {
+  cursor: pointer;
+  position: fixed;
+  left: 15em;
+  top: 11em;
+  width: 40px;
+  height: 60px;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+  background: #999999;
+  transition: 0.2s;
+}
+
+.arrow_icon {
+  height: 2em;
+  display: block;
+  max-width: 100%;
+  margin: 0.85em auto 0 auto;
 }
 
 .user {
@@ -370,7 +432,7 @@ input[type="radio"]:checked {
   width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #fff;
+  color: var(--white);
 }
 
 .truncate strong {
@@ -388,9 +450,10 @@ input[type="radio"]:checked {
 /************************************************** MENU NAVIGATION **************************************************/
 
 .menu_navigation {
-  position: absolute;
+  position: fixed;
   top: 35%;
   left: 13em;
+  transition: 0.2s;
 }
 
 .menu_navigation ul {
@@ -427,16 +490,20 @@ input[type="radio"]:checked {
   width: 4em;
   height: 2em;
   border-radius: 0.5em;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  color: var(--white);
+  background: var(--main_green);
   font-size: 1em;
   cursor: pointer;
   margin-right: 2em;
-  transition: 0.4s;
+  /* transition: 0.4s; */
 }
 
 #logout:hover {
-  background: linear-gradient(180deg, #ff4006 0%, #ff0b38 100%);
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
 }
 
 #profile_btn {
@@ -463,7 +530,6 @@ input[type="radio"]:checked {
   width: 50vw;
   height: 90vh;
   margin: 0 auto;
-  /* background-color: #cecece; */
 }
 
 .content_todolist {
@@ -492,11 +558,11 @@ input[type="radio"]:checked {
 
 .times p {
   margin-bottom: 0.5em;
-  color: #ff1741;
+  color: var(--main_green);
 }
 
 #week_day {
-  color: #ff1741;
+  color: var(--main_green);
   text-align: center;
   font-weight: normal;
 }
@@ -523,30 +589,42 @@ input[type="radio"]:checked {
 
 #btn_afazer {
   display: block;
-  margin: 15em auto 0 auto;
+  margin: 5em auto 0 auto;
   cursor: pointer;
   border-radius: 0.5em;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  color: var(--white);
+  background: var(--main_green);
   border: none;
   font-size: 1em;
   height: 2.3em;
 }
 
 #btn_afazer:hover {
-  background: linear-gradient(180deg, #ff4006 0%, #ff0b38 100%);
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
 }
 
 #btn_fecharModal {
   display: block;
-  /* margin: 15em auto 0 auto; */
   cursor: pointer;
   border-radius: 0.25em;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  color: var(--white);
+  background: var(--main_green);
   border: none;
   font-size: 1em;
   height: 2em;
+  font-weight: bold;
+}
+
+#btn_fecharModal:hover {
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
 }
 
 #fade {
@@ -564,7 +642,7 @@ input[type="radio"]:checked {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
 }
 
@@ -574,30 +652,68 @@ input[type="radio"]:checked {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: #fff;
+  background-color: var(--white);
   width: 500px;
+  height: 350px;
   max-width: 90%;
   padding: 1.2rem;
   border-radius: 0.5rem;
 }
 
-#label_horario,
-#label_afazer,
-#label_paciente {
-  margin-bottom: 1em;
+#label_horario input,
+#label_titulo_afazer input,
+#label_afazer input,
+#label_paciente select {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  height: 1.85em;
+  border: 2px solid var(--main_green);
+  border-radius: 4px;
 }
 
-#label_horario label,
-#label_afazer label,
-#label_paciente label {
-  margin-right: 1em;
+#label_paciente select:focus {
+  outline: 1px solid var(--main_green);
+}
+
+#label_paciente select::selection {
+  outline: 2px solid var(--main_green);
+}
+
+#label_horario,
+#label_afazer,
+#label_paciente,
+#label_titulo_afazer {
+  display: table-row;
+}
+
+#form_afazeres {
+  display: table;
+}
+
+#form_afazeres label,
+#form_afazeres input {
+  display: table-cell;
+  margin-bottom: 1.2em;
 }
 
 #btn_form_afazeres {
-  height: 1.5em;
+  margin-top: 1.4em;
+  height: 1.8em;
   width: 5em;
+  border: none;
   font-size: 1.2em;
   border-radius: 0.5em;
+  background: var(--main_green);
+  color: var(--white);
+  cursor: pointer;
+}
+
+#btn_form_afazeres:hover {
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
 }
 
 #fade,
@@ -614,19 +730,120 @@ input[type="radio"]:checked {
 }
 
 .todoPatients {
-  background-color: #bebebe;
-  width: 80%;
-  max-width: 90%;
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 2em 0 2em;
+  flex-direction: column;
+  margin: 2em auto;
+  padding-bottom: 10vh;
+}
+
+.del {
+  display: flex;
 }
 
 .todo {
-  width: 300px;
-  background-color: #e43500;
-  border: 1px solid #646464;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  height: auto;
+  max-width: 90%;
+  background: transparent;
+  border: 3px solid var(--main_green);
+  border-radius: 20px;
+  margin: 0.3em auto;
+}
+
+.todo p {
+  max-width: 100px;
+  color: var(--black);
+}
+
+#horario {
+  color: var(--main_green);
+  font-size: 1.45em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#todo_afazer {
+  max-width: 180px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-break: break-all;
+}
+
+#todo_afazer p,
+#paciente p {
+  font-weight: bold;
+  max-width: 180px;
+  margin: 0 auto 0.5em auto;
+}
+
+#paciente {
+  text-align: center;
+}
+
+#details {
+  cursor: pointer;
+  padding: 2px;
+}
+
+#details div:nth-child(1),
+#details div:nth-child(2),
+#details div:nth-child(3) {
+  font-weight: bold;
+}
+
+#details div:nth-child(2),
+#details div:nth-child(3) {
+  margin-top: -0.95em;
+}
+
+#btn_salvar {
+  margin-top: 1.4em;
+  height: 1.8em;
+  width: 5em;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  background: var(--main_green);
+  color: var(--white);
+  cursor: pointer;
+}
+
+#form_infos {
+  display: table;
+}
+
+#form_infos label,
+#form_infos input {
+  display: table-cell;
+  margin-bottom: 1.2em;
+}
+
+#paciente_texto {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  height: 1.85em;
+  border: 2px solid var(--main_green);
+  border-radius: 4px;
+}
+
+#btn_excluir {
+  height: 2.6em;
+  width: 4.4em;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  background: var(--warning);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#btn_excluir:hover {
+  background-color: var(--warning_hover);
 }
 
 /************************************************** PROFILE **************************************************/
@@ -714,13 +931,12 @@ input[type="radio"]:checked {
   width: 100%;
   overflow-y: auto;
   margin-top: 0.4em;
-  scrollbar-width: none; /*hiden scrollbar in firefox*/
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .messages::-webkit-scrollbar {
   display: none;
-  /*hiden scrollbar in: Chrome, Safari and Opera*/
 }
 
 .message_wrapper {
@@ -752,13 +968,17 @@ input[type="radio"]:checked {
 }
 
 .me {
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
-  color: #fff;
+  background: linear-gradient(
+    180deg,
+    var(--dark_green1) 0%,
+    var(--dark_green2) 100%
+  );
+  color: var(--white);
 }
 
 .friend {
   background-color: #646464;
-  color: #fff;
+  color: var(--white);
 }
 
 .selected_user {
@@ -785,19 +1005,19 @@ input[type="radio"]:checked {
   outline: none;
   border: none;
   background-color: #646464;
-  color: #fff;
+  color: var(--white);
   font-size: 0.9em;
 }
 
 .message_form input::placeholder {
-  color: #fff;
+  color: var(--white);
 }
 
 #btn {
   cursor: pointer;
   border-radius: 0.5em;
-  color: #fff;
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  color: var(--white);
+  background: var(--main_green);
   border: none;
   font-size: 1em;
   width: 4em;
@@ -807,7 +1027,7 @@ input[type="radio"]:checked {
 }
 
 #btn:hover {
-  background: linear-gradient(180deg, #ff4006 0%, #ff0b38 100%);
+  background: var(--dark_green2);
 }
 
 /********************************************** CALL **********************************************/
@@ -829,18 +1049,18 @@ input[type="radio"]:checked {
   outline: none;
   border: none;
   background-color: #646464;
-  color: #fff;
+  color: var(--white);
   font-size: 0.9em;
 }
 
 .input_roomName input::placeholder {
-  color: #fff;
+  color: var(--white);
 }
 
 .input_roomName button {
   cursor: pointer;
   border-radius: 0.5em;
-  color: #fff;
+  color: var(--white);
   background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
   border: none;
   font-size: 1em;
@@ -888,3 +1108,42 @@ input[type="radio"]:checked {
   text-align: center;
   font-size: 3em;
 }
+
+/********************************************** BREAKPOINTS **********************************************/
+
+/* @media only screen and (max-width: 1000px) {
+  .sidebar,
+  .menu_navigation,
+  .btn_toggle {
+    transition: 0.2s;
+    margin-left: -15em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #forgot_form {
+    max-width: 18em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #forgot_form {
+    width: 200px;
+    padding-top: 4em;
+    font-size: 0.9em;
+    margin-left: -2.4em;
+    margin-right: 2em;
+  }
+  .btn_submit input[type="submit"] {
+    width: 100%;
+    height: 1.5em;
+    border: none;
+    color: var(--black);
+    background: var(--main_green);
+    border-radius: 10px;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+} */
