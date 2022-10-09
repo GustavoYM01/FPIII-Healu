@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { db, auth } from "../firebase/config";
 import { collection, query, where, onSnapshot } from "firebase/firestore";

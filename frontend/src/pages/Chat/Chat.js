@@ -26,6 +26,25 @@ import ArrowRight from "../../imgs/arrowRight.svg";
 const Chat = () => {
   let hrefPage = window.location.href;
 
+  const sideBar = document.querySelector(".sidebar");
+  const btnToggle = document.querySelector(".btn_toggle");
+  const menuNav = document.querySelector(".menu_navigation");
+  const arrowIcon = document.querySelector(".arrow_icon");
+  const user_wrapperSelectedUser = document.querySelector(
+    ".user_wrapper.selected_user"
+  );
+
+  if (user_wrapperSelectedUser) {
+    if (sideBar && btnToggle && menuNav && arrowIcon) {
+      arrowIcon.src = ArrowRight;
+      sideBar.style.marginLeft = "-15em";
+      menuNav.style.marginLeft = "-15em";
+      menuNav.style.opacity = "1";
+      menuNav.style.pointerEvents = "all";
+      btnToggle.style.marginLeft = "-15em";
+    }
+  }
+
   const [users, setUsers] = useState([]);
   const [chat, setChat] = useState("");
   const [text, setText] = useState("");
@@ -105,11 +124,6 @@ const Chat = () => {
 
     setText("");
   };
-
-  const sideBar = document.querySelector(".sidebar");
-  const btnToggle = document.querySelector(".btn_toggle");
-  const menuNav = document.querySelector(".menu_navigation");
-  const arrowIcon = document.querySelector(".arrow_icon");
 
   const toggleSidebar = () => {
     if (sideBar && btnToggle && menuNav && arrowIcon) {

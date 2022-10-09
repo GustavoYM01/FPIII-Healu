@@ -35,14 +35,27 @@ const Call = () => {
       ) : (
         <></>
       )}
-      <div className="input_roomName">
-        <input
-          type="text"
-          onChange={(e) => setRoom(e.target.value)}
-          placeholder="Insira um nome para a sala virtual"
-        />
-        <button onClick={handleSubmit}>Enviar</button>
-      </div>
+      {window.innerWidth > 1000 ? (
+        <div className="input_roomName">
+          <input
+            type="text"
+            onChange={(e) => setRoom(e.target.value)}
+            placeholder="Insira um nome para a sala virtual"
+          />
+          <button onClick={handleSubmit}>Enviar</button>
+        </div>
+      ) : (
+        <div className="input_roomNameMobile">
+          <input
+            type="text"
+            onChange={(e) => setRoom(e.target.value)}
+            placeholder="Insira um nome para a sala virtual"
+          />
+          <div>
+            <button onClick={handleSubmit}>Enviar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

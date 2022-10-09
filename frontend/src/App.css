@@ -7,11 +7,20 @@
   --black: #000;
   --warning: #dc0000;
   --warning_hover: #b80000;
+  --main_blue: #1045ff;
+  --main_darkBlue: #0024a5;
 }
 
 /************************************************** GLOBAL STYLES **************************************************/
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+h2 {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   height: auto;
@@ -43,6 +52,34 @@ a {
 #logo_form {
   margin-top: 6vh;
   height: 8em;
+}
+
+#divLogo_title {
+  display: flex;
+}
+
+#divLogo_title div {
+  padding-left: 4em;
+}
+
+#divForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 4em;
+  padding-right: 4em;
+  margin-top: 1em;
+}
+
+#divForm h2 {
+  box-sizing: border-box;
+  color: var(--main_blue);
+  text-align: left;
+  max-width: 6em;
+  /* line-height: 1.5; */
+  font-size: 6em;
+  font-weight: 900;
+  word-wrap: break-word;
 }
 
 #logo_title {
@@ -88,8 +125,8 @@ a {
   height: 2em;
   margin-top: 1em;
   border: none;
-  color: var(--black);
-  background: var(--main_green);
+  color: var(--white);
+  background: var(--main_blue);
   border-radius: 28px;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
@@ -99,7 +136,7 @@ a {
 }
 
 #input_submit:hover {
-  background: var(--dark_green2);
+  background: var(--main_darkBlue);
 }
 
 #after_form {
@@ -119,11 +156,11 @@ a {
 
 #after_form a {
   margin-left: 4px;
-  color: var(--main_green);
+  color: var(--main_blue);
   background: linear-gradient(
     180deg,
-    var(--main_green) 0%,
-    var(--dark_green2) 100%
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -132,11 +169,11 @@ a {
 }
 
 #after_form a:hover {
-  color: var(--main_green);
+  color: var(--main_blue);
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -166,12 +203,12 @@ input[type="text"] {
 }
 
 .forgot_pass a {
-  color: var(--main_green);
+  color: var(--main_blue);
   font-weight: bold;
   background: linear-gradient(
     180deg,
-    var(--main_green) 0%,
-    var(--dark_green2) 100%
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -180,11 +217,11 @@ input[type="text"] {
 }
 
 .forgot_pass a:hover {
-  color: var(--main_green);
+  color: var(--main_blue);
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_blue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -204,8 +241,8 @@ input[type="text"] {
   width: 100%;
   height: 2em;
   border: none;
-  color: var(--black);
-  background: var(--main_green);
+  color: var(--white);
+  background: var(--main_blue);
   border-radius: 28px;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
@@ -215,7 +252,7 @@ input[type="text"] {
 }
 
 .btn_submit input[type="submit"]:hover {
-  background: var(--dark_green2);
+  background: var(--main_darkBlue);
 }
 
 /************************************************** SIGN UP part **************************************************/
@@ -247,11 +284,11 @@ input[type="text"] {
 
 #after_form2 a {
   margin-left: 4px;
-  color: var(--main_green);
+  color: var(--main_blue);
   background: linear-gradient(
     180deg,
-    var(--main_green) 0%,
-    var(--dark_green2) 100%
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -260,11 +297,11 @@ input[type="text"] {
 }
 
 #after_form2 a:hover {
-  color: var(--main_green);
+  color: var(--main_blue);
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -275,8 +312,8 @@ input[type="text"] {
   width: 100%;
   height: 2em;
   border: none;
-  color: var(--black);
-  background: var(--main_green);
+  color: var(--white);
+  background: var(--main_blue);
   border-radius: 28px;
   font-family: "Nunito", sans-serif;
   font-size: 2em;
@@ -286,11 +323,11 @@ input[type="text"] {
 }
 
 #input_submit2:hover {
-  background: var(--dark_green2);
+  background: var(--main_darkBlue);
 }
 
 .error {
-  background-color: var(--dark_green1);
+  background-color: var(--main_blue);
   max-width: 14em;
   text-align: center;
   margin: 0 auto 0 auto;
@@ -314,7 +351,7 @@ input[type="text"] {
 input[type="radio"] {
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 0 0 1px #392;
+  box-shadow: 0 0 0 1px var(--main_blue);
   appearance: none;
   border-radius: 50%;
   width: 12px;
@@ -324,7 +361,7 @@ input[type="radio"] {
 
 input[type="radio"]:checked {
   transition: 0.2s;
-  background-color: #34eb52;
+  background-color: var(--main_blue);
 }
 
 /************************************************** LOADING **************************************************/
@@ -491,7 +528,7 @@ input[type="radio"]:checked {
   height: 2em;
   border-radius: 0.5em;
   color: var(--white);
-  background: var(--main_green);
+  background: var(--main_blue);
   font-size: 1em;
   cursor: pointer;
   margin-right: 2em;
@@ -501,8 +538,8 @@ input[type="radio"]:checked {
 #logout:hover {
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
 }
 
@@ -558,13 +595,14 @@ input[type="radio"]:checked {
 
 .times p {
   margin-bottom: 0.5em;
-  color: var(--main_green);
+  color: var(--main_blue);
 }
 
 #week_day {
-  color: var(--main_green);
+  color: var(--main_blue);
   text-align: center;
   font-weight: normal;
+  padding-top: 1.5em;
 }
 
 .todolist ul li:nth-child(2) {
@@ -593,7 +631,7 @@ input[type="radio"]:checked {
   cursor: pointer;
   border-radius: 0.5em;
   color: var(--white);
-  background: var(--main_green);
+  background: var(--main_blue);
   border: none;
   font-size: 1em;
   height: 2.3em;
@@ -602,8 +640,8 @@ input[type="radio"]:checked {
 #btn_afazer:hover {
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
 }
 
@@ -612,7 +650,7 @@ input[type="radio"]:checked {
   cursor: pointer;
   border-radius: 0.25em;
   color: var(--white);
-  background: var(--main_green);
+  background: var(--main_blue);
   border: none;
   font-size: 1em;
   height: 2em;
@@ -622,8 +660,8 @@ input[type="radio"]:checked {
 #btn_fecharModal:hover {
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
 }
 
@@ -667,16 +705,16 @@ input[type="radio"]:checked {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   height: 1.85em;
-  border: 2px solid var(--main_green);
+  border: 2px solid var(--main_blue);
   border-radius: 4px;
 }
 
 #label_paciente select:focus {
-  outline: 1px solid var(--main_green);
+  outline: 1px solid var(--main_blue);
 }
 
 #label_paciente select::selection {
-  outline: 2px solid var(--main_green);
+  outline: 2px solid var(--main_blue);
 }
 
 #label_horario,
@@ -703,7 +741,7 @@ input[type="radio"]:checked {
   border: none;
   font-size: 1.2em;
   border-radius: 0.5em;
-  background: var(--main_green);
+  background: var(--main_blue);
   color: var(--white);
   cursor: pointer;
 }
@@ -711,8 +749,8 @@ input[type="radio"]:checked {
 #btn_form_afazeres:hover {
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
 }
 
@@ -748,7 +786,7 @@ input[type="radio"]:checked {
   height: auto;
   max-width: 90%;
   background: transparent;
-  border: 3px solid var(--main_green);
+  border: 3px solid var(--main_blue);
   border-radius: 20px;
   margin: 0.3em auto;
 }
@@ -759,7 +797,7 @@ input[type="radio"]:checked {
 }
 
 #horario {
-  color: var(--main_green);
+  color: var(--main_blue);
   font-size: 1.45em;
   font-weight: bold;
   text-align: center;
@@ -807,7 +845,7 @@ input[type="radio"]:checked {
   border: none;
   font-size: 1.2em;
   border-radius: 0.5em;
-  background: var(--main_green);
+  background: var(--main_blue);
   color: var(--white);
   cursor: pointer;
 }
@@ -826,7 +864,7 @@ input[type="radio"]:checked {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   height: 1.85em;
-  border: 2px solid var(--main_green);
+  border: 2px solid var(--main_blue);
   border-radius: 4px;
 }
 
@@ -970,8 +1008,8 @@ input[type="radio"]:checked {
 .me {
   background: linear-gradient(
     180deg,
-    var(--dark_green1) 0%,
-    var(--dark_green2) 100%
+    var(--main_darkBlue) 0%,
+    var(--main_darkBlue) 100%
   );
   color: var(--white);
 }
@@ -989,8 +1027,8 @@ input[type="radio"]:checked {
 
 .message_form {
   position: absolute;
-  bottom: -10%;
-  left: 10%;
+  bottom: -5%;
+  left: 2%;
   width: 100%;
   height: auto;
   display: flex;
@@ -1017,7 +1055,7 @@ input[type="radio"]:checked {
   cursor: pointer;
   border-radius: 0.5em;
   color: var(--white);
-  background: var(--main_green);
+  background: var(--main_blue);
   border: none;
   font-size: 1em;
   width: 4em;
@@ -1027,7 +1065,7 @@ input[type="radio"]:checked {
 }
 
 #btn:hover {
-  background: var(--dark_green2);
+  background: var(--main_darkBlue);
 }
 
 /********************************************** CALL **********************************************/
@@ -1061,7 +1099,11 @@ input[type="radio"]:checked {
   cursor: pointer;
   border-radius: 0.5em;
   color: var(--white);
-  background: linear-gradient(180deg, #fc693b 0%, #ff4b6b 100%);
+  background: linear-gradient(
+    180deg,
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
+  );
   border: none;
   font-size: 1em;
   padding: 0.6em;
@@ -1070,7 +1112,53 @@ input[type="radio"]:checked {
 }
 
 .input_roomName button:hover {
-  background: linear-gradient(180deg, #ff4006 0%, #ff0b38 100%);
+  background: linear-gradient(
+    180deg,
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
+  );
+}
+
+.input_roomNameMobile {
+  position: absolute;
+  top: 20%;
+}
+
+.input_roomNameMobile div {
+  margin-top: 2em;
+  margin-left: 5.5em;
+  margin-right: 5.5em;
+}
+
+.input_roomNameMobile input {
+  width: 40vw;
+  margin: 0 1em;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #646464;
+  color: var(--white);
+  font-size: 0.9em;
+}
+
+.input_roomNameMobile input::placeholder {
+  color: var(--white);
+}
+
+.input_roomNameMobile button {
+  cursor: pointer;
+  border-radius: 0.5em;
+  color: var(--white);
+  background: linear-gradient(
+    180deg,
+    var(--main_blue) 0%,
+    var(--main_darkBlue) 100%
+  );
+  border: none;
+  font-size: 1em;
+  padding: 0.6em;
+  width: 10em;
 }
 
 /********************************************** NOT FOUND PAGE **********************************************/
@@ -1111,39 +1199,29 @@ input[type="radio"]:checked {
 
 /********************************************** BREAKPOINTS **********************************************/
 
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
   .sidebar,
   .menu_navigation,
   .btn_toggle {
     transition: 0.2s;
     margin-left: -15em;
+    z-index: 999999;
+  }
+  .btn_toggle {
+    background-color: var(--main_blue);
+  }
+  .no_conv {
+    max-width: 16.8em;
+  }
+  .content_navbar {
+    right: 3em;
+  }
+  .messages {
+    height: calc(100vh - 350px);
+    overflow-y: auto;
+  }
+  .message_form {
+    bottom: -8%;
+    left: 1.5%;
   }
 }
-
-@media only screen and (max-width: 768px) {
-  #forgot_form {
-    max-width: 18em;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  #forgot_form {
-    width: 200px;
-    padding-top: 4em;
-    font-size: 0.9em;
-    margin-left: -2.4em;
-    margin-right: 2em;
-  }
-  .btn_submit input[type="submit"] {
-    width: 100%;
-    height: 1.5em;
-    border: none;
-    color: var(--black);
-    background: var(--main_green);
-    border-radius: 10px;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
-    transition: 0.4s;
-    cursor: pointer;
-  }
-} */

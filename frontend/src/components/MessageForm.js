@@ -22,7 +22,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
         />
       </div>
       <div>
-        <input id="btn" type="submit" value="Enviar" />
+        <input id="btn" type="submit" />
       </div>
     </form>
   );
