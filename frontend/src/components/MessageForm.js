@@ -1,6 +1,8 @@
 import Attachment from "./svg/Attachment";
+import PaperPlane from "../imgs/paperPlane.svg";
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
+  const msgInp = document.querySelector("#inp_msg");
   return (
     <form className="message_form" onSubmit={handleSubmit}>
       <label htmlFor="img">
@@ -15,6 +17,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
       />
       <div>
         <input
+          id="inp_msg"
           type="text"
           placeholder="Digite a mensagem"
           value={text}
@@ -22,7 +25,28 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
         />
       </div>
       <div>
-        <input id="btn" type="submit" />
+        {msgInp && msgInp.value.length === 0 ? (
+          <>
+            <img id="enter_msg" src={PaperPlane} alt="Ícone enviar msg" />
+            <input
+              id="btn"
+              className="disabled"
+              type="submit"
+              value=""
+              disabled
+            />
+          </>
+        ) : (
+          <>
+            <img
+              id="enter_msg"
+              src={PaperPlane}
+              alt="Ícone enviar msg"
+              onClick={handleSubmit}
+            />
+            <input id="btn" type="submit" value="" />
+          </>
+        )}
       </div>
     </form>
   );

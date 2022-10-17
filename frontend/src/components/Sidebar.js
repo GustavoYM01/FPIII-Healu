@@ -31,24 +31,44 @@ const Sidebar = () => {
   const menuNav = document.querySelector(".menu_navigation");
   const arrowIcon = document.querySelector(".arrow_icon");
 
-  const toggleSidebar = () => {
+  const toggleSidebar = (e) => {
     if (sideBar && btnToggle && menuNav && arrowIcon) {
       arrowIcon.src = ArrowLeft;
-      if (sideBar.style.marginLeft < "0") {
-        sideBar.style.marginLeft = "0";
-        menuNav.style.marginLeft = "0";
-        menuNav.style.opacity = "0";
+      if (window.innerWidth <= 450) {
         if (menuNav.style.opacity === "0") {
-          menuNav.style.pointerEvents = "none";
+          menuNav.style.opacity = "1";
         }
-        btnToggle.style.marginLeft = "0";
+        menuNav.style.opacity = "0";
+        if (sideBar.style.marginLeft < "0") {
+          sideBar.style.marginLeft = "0";
+          if (menuNav.style.opacity === "0") {
+            menuNav.style.pointerEvents = "none";
+          }
+          btnToggle.style.marginLeft = "0";
+        } else {
+          arrowIcon.src = ArrowRight;
+          sideBar.style.marginLeft = "-15em";
+          menuNav.style.opacity = "1";
+          menuNav.style.pointerEvents = "all";
+          btnToggle.style.marginLeft = "-15em";
+        }
       } else {
-        arrowIcon.src = ArrowRight;
-        sideBar.style.marginLeft = "-15em";
-        menuNav.style.marginLeft = "-15em";
-        menuNav.style.opacity = "1";
-        menuNav.style.pointerEvents = "all";
-        btnToggle.style.marginLeft = "-15em";
+        if (sideBar.style.marginLeft < "0") {
+          sideBar.style.marginLeft = "0";
+          menuNav.style.marginLeft = "0";
+          menuNav.style.opacity = "0";
+          if (menuNav.style.opacity === "0") {
+            menuNav.style.pointerEvents = "none";
+          }
+          btnToggle.style.marginLeft = "0";
+        } else {
+          arrowIcon.src = ArrowRight;
+          sideBar.style.marginLeft = "-15em";
+          menuNav.style.marginLeft = "-15em";
+          menuNav.style.opacity = "1";
+          menuNav.style.pointerEvents = "all";
+          btnToggle.style.marginLeft = "-15em";
+        }
       }
     }
   };

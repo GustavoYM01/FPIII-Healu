@@ -188,6 +188,7 @@ input[type="text"] {
   box-sizing: border-box;
   padding-left: 6px;
   height: 2.6em;
+  word-wrap: break-word;
 }
 
 /************************************************** FORGOT PASSWORD part **************************************************/
@@ -532,7 +533,11 @@ input[type="radio"]:checked {
   font-size: 1em;
   cursor: pointer;
   margin-right: 2em;
-  /* transition: 0.4s; */
+}
+
+#signout {
+  cursor: pointer;
+  margin-right: 1.5em;
 }
 
 #logout:hover {
@@ -672,7 +677,7 @@ input[type="radio"]:checked {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 5;
+  z-index: 9;
 }
 
 .modal_header {
@@ -693,7 +698,7 @@ input[type="radio"]:checked {
   background-color: var(--white);
   width: 500px;
   height: 350px;
-  max-width: 90%;
+  max-width: 86%;
   padding: 1.2rem;
   border-radius: 0.5rem;
 }
@@ -1012,6 +1017,7 @@ input[type="radio"]:checked {
     var(--main_darkBlue) 100%
   );
   color: var(--white);
+  word-wrap: break-word;
 }
 
 .friend {
@@ -1026,9 +1032,6 @@ input[type="radio"]:checked {
 /********************************************** FORM DE MENSAGEM **********************************************/
 
 .message_form {
-  position: absolute;
-  bottom: -5%;
-  left: 2%;
   width: 100%;
   height: auto;
   display: flex;
@@ -1051,17 +1054,31 @@ input[type="radio"]:checked {
   color: var(--white);
 }
 
+#enter_msg {
+  width: 32px;
+  height: 32px;
+  padding-top: 0.38em;
+  position: absolute;
+  cursor: pointer;
+}
+
 #btn {
   cursor: pointer;
-  border-radius: 0.5em;
-  color: var(--white);
-  background: var(--main_blue);
+  border-radius: 50%;
+  background-color: var(--main_blue);
   border: none;
   font-size: 1em;
-  width: 4em;
-  height: 2.3em;
-  transition: 0.4s;
+  width: 2.11em;
+  height: 2.11em;
   margin-left: -0.2em;
+  margin-top: 0.4em;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s;
+}
+
+#btn.disabled {
+  background-color: #333333;
 }
 
 #btn:hover {
@@ -1201,11 +1218,15 @@ input[type="radio"]:checked {
 
 @media only screen and (max-width: 1000px) {
   .sidebar,
-  .menu_navigation,
   .btn_toggle {
     transition: 0.2s;
     margin-left: -15em;
-    z-index: 999999;
+    z-index: 9;
+  }
+  .menu_navigation {
+    transition: 0.2s;
+    margin-left: -15em;
+    z-index: 8;
   }
   .btn_toggle {
     background-color: var(--main_blue);
@@ -1217,11 +1238,93 @@ input[type="radio"]:checked {
     right: 3em;
   }
   .messages {
-    height: calc(100vh - 350px);
+    height: 82vh;
     overflow-y: auto;
   }
   .message_form {
     bottom: -8%;
     left: 1.5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .content_navbar,
+  .menu_navigation {
+    position: fixed;
+  }
+  .content_navbar {
+    top: 0.8%;
+    right: 4%;
+  }
+  #btn_afazer {
+    margin-top: 12em;
+  }
+  .menu_navigation {
+    margin: -1vh auto 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--white);
+    height: auto;
+    top: 10vh;
+  }
+  .menu_navigation.small {
+    margin: -2.8vh auto 0 auto;
+  }
+  .menu_navigation ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    height: 2em;
+  }
+  #modal {
+    transform: translate(-50%, -55%);
+    z-index: 999999;
+  }
+  .profile_container {
+    max-width: 90%;
+  }
+  .center_container {
+    width: 100%;
+  }
+  .no_conv {
+    margin: 12em auto 0 auto;
+  }
+  .messages {
+    height: calc(100vh - 25vh);
+  }
+  .messages_user {
+    border: none;
+  }
+  .messages_container {
+    max-width: 96%;
+    margin: 5vh auto 0 auto;
+  }
+  .messages_container.mobile {
+    margin: 0 auto;
+  }
+  .message_form {
+    position: static;
+    top: 0;
+    left: 0;
+    margin: 0.2em auto 0 auto;
+  }
+  .message_form input {
+    width: 90%;
+  }
+  .input_roomNameMobile {
+    position: static;
+    padding-top: 8em;
+  }
+  .input_roomNameMobile input {
+    width: 91%;
+  }
+  .input_roomNameMobile div {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .input_roomNameMobile button {
+    margin: 1em 0 0 32%;
+    width: 35%;
   }
 }

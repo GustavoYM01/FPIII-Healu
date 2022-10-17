@@ -7,6 +7,9 @@ import Call2 from "../imgs/NewSvgs/Call.svg";
 import SelectedClipBoard from "../imgs/NewSvgs/SelectedClipboard.svg";
 import SelectedChat2 from "../imgs/NewSvgs/SelectedChat.svg";
 
+import ArrowUp from "../imgs/CaretUp.svg";
+import ArrowDown from "../imgs/CaretDown.svg";
+
 function changeIcon(domImg, srcImage) {
   let img = new Image();
   img.onload = function () {
@@ -36,25 +39,49 @@ const MenuNavigation = ({ hrefPage }) => {
   setTimeout(toggleIcon, 20);
 
   return (
-    <nav className="menu_navigation">
-      <ul>
-        <li>
-          <NavLink to="/lista">
-            <img id="todolist" src={ClipBoard} alt="Lembretes" />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/chat">
-            <img id="chat" src={Chat2} alt="Chat" />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/">
-            <img id="call" src={Call2} alt="Ligação" />
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <>
+      {window.innerHeight === 568 ? (
+        <nav className="menu_navigation small">
+          <ul>
+            <li>
+              <NavLink to="/lista">
+                <img id="todolist" src={ClipBoard} alt="Lembretes" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/chat">
+                <img id="chat" src={Chat2} alt="Chat" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/">
+                <img id="call" src={Call2} alt="Ligação" />
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      ) : (
+        <nav className="menu_navigation">
+          <ul>
+            <li>
+              <NavLink to="/lista">
+                <img id="todolist" src={ClipBoard} alt="Lembretes" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/chat">
+                <img id="chat" src={Chat2} alt="Chat" />
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/">
+                <img id="call" src={Call2} alt="Ligação" />
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 

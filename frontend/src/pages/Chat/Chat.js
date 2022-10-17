@@ -36,9 +36,9 @@ const Chat = () => {
 
   if (user_wrapperSelectedUser) {
     if (sideBar && btnToggle && menuNav && arrowIcon) {
+      menuNav.classList.remove("small");
       arrowIcon.src = ArrowRight;
       sideBar.style.marginLeft = "-15em";
-      menuNav.style.marginLeft = "-15em";
       menuNav.style.opacity = "1";
       menuNav.style.pointerEvents = "all";
       btnToggle.style.marginLeft = "-15em";
@@ -125,24 +125,44 @@ const Chat = () => {
     setText("");
   };
 
-  const toggleSidebar = () => {
+  const toggleSidebar = (e) => {
     if (sideBar && btnToggle && menuNav && arrowIcon) {
       arrowIcon.src = ArrowLeft;
-      if (sideBar.style.marginLeft < "0") {
-        sideBar.style.marginLeft = "0";
-        menuNav.style.marginLeft = "0";
-        menuNav.style.opacity = "0";
+      if (window.innerWidth <= 450) {
         if (menuNav.style.opacity === "0") {
-          menuNav.style.pointerEvents = "none";
+          menuNav.style.opacity = "1";
         }
-        btnToggle.style.marginLeft = "0";
+        menuNav.style.opacity = "0";
+        if (sideBar.style.marginLeft < "0") {
+          sideBar.style.marginLeft = "0";
+          if (menuNav.style.opacity === "0") {
+            menuNav.style.pointerEvents = "none";
+          }
+          btnToggle.style.marginLeft = "0";
+        } else {
+          arrowIcon.src = ArrowRight;
+          sideBar.style.marginLeft = "-15em";
+          menuNav.style.opacity = "1";
+          menuNav.style.pointerEvents = "all";
+          btnToggle.style.marginLeft = "-15em";
+        }
       } else {
-        arrowIcon.src = ArrowRight;
-        sideBar.style.marginLeft = "-15em";
-        menuNav.style.marginLeft = "-15em";
-        menuNav.style.opacity = "1";
-        menuNav.style.pointerEvents = "all";
-        btnToggle.style.marginLeft = "-15em";
+        if (sideBar.style.marginLeft < "0") {
+          sideBar.style.marginLeft = "0";
+          menuNav.style.marginLeft = "0";
+          menuNav.style.opacity = "0";
+          if (menuNav.style.opacity === "0") {
+            menuNav.style.pointerEvents = "none";
+          }
+          btnToggle.style.marginLeft = "0";
+        } else {
+          arrowIcon.src = ArrowRight;
+          sideBar.style.marginLeft = "-15em";
+          menuNav.style.marginLeft = "-15em";
+          menuNav.style.opacity = "1";
+          menuNav.style.pointerEvents = "all";
+          btnToggle.style.marginLeft = "-15em";
+        }
       }
     }
   };
@@ -171,32 +191,61 @@ const Chat = () => {
       </div>
       <MenuNavigation hrefPage={hrefPage} />
       <Navbar />
-      <div className="messages_container">
-        {chat ? (
-          <>
-            <div className="messages_user">
-              <h3>{chat.userName}</h3>
-            </div>
-            <div className="messages">
-              {msgs.length
-                ? msgs.map((msg, i) => (
-                    <Message key={i} msg={msg} user1={user1} />
-                  ))
-                : null}
-            </div>
-            <MessageForm
-              handleSubmit={handleSubmit}
-              text={text}
-              setText={setText}
-              setImg={setImg}
-            />
-          </>
-        ) : (
-          <h3 className="no_conv">
-            Selecione algum usuário para iniciar uma conversa
-          </h3>
-        )}
-      </div>
+      {window.innerHeight <= 700 ? (
+        <div className="messages_container mobile">
+          {chat ? (
+            <>
+              <div className="messages_user">
+                <h3>{chat.userName}</h3>
+              </div>
+              <div className="messages">
+                {msgs.length
+                  ? msgs.map((msg, i) => (
+                      <Message key={i} msg={msg} user1={user1} />
+                    ))
+                  : null}
+              </div>
+              <MessageForm
+                handleSubmit={handleSubmit}
+                text={text}
+                setText={setText}
+                setImg={setImg}
+              />
+            </>
+          ) : (
+            <h3 className="no_conv">
+              Selecione algum usuário para iniciar uma conversa
+            </h3>
+          )}
+        </div>
+      ) : (
+        <div className="messages_container">
+          {chat ? (
+            <>
+              <div className="messages_user">
+                <h3>{chat.userName}</h3>
+              </div>
+              <div className="messages">
+                {msgs.length
+                  ? msgs.map((msg, i) => (
+                      <Message key={i} msg={msg} user1={user1} />
+                    ))
+                  : null}
+              </div>
+              <MessageForm
+                handleSubmit={handleSubmit}
+                text={text}
+                setText={setText}
+                setImg={setImg}
+              />
+            </>
+          ) : (
+            <h3 className="no_conv">
+              Selecione algum usuário para iniciar uma conversa
+            </h3>
+          )}
+        </div>
+      )}
     </div>
   );
 };

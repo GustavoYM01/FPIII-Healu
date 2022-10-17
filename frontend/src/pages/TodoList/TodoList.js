@@ -58,6 +58,7 @@ const TodoList = () => {
     const usersRef = collection(db, "users");
     const q = query(usersRef, where("uid", "not-in", [currentUser]));
     const unsub = onSnapshot(q, (querySnapshot) => {
+      setUsers([]);
       querySnapshot.forEach((doc) => {
         usersUseEffect.push(doc.data());
       });
@@ -118,6 +119,9 @@ const TodoList = () => {
     let fade = document.querySelector("#fade");
     modal.classList.toggle("hide");
     fade.classList.toggle("hide");
+    setHorario("");
+    setTituloAfazer("");
+    setAfazer("");
   };
 
   const makeid = (length) => {
@@ -180,14 +184,14 @@ const TodoList = () => {
       <MenuNavigation hrefPage={hrefPage} />
       <Navbar />
       <div id="fade" className="hide"></div>
-      <h2 id="week_day">{setTimeout(dayOfWeek, 15)}</h2>
+      {window.innerWidth > 450 ? (
+        <h2 id="week_day">{setTimeout(dayOfWeek, 15)}</h2>
+      ) : null}
       {profSaude.length > 0 && profSaude[0].isHealthProfessional !== false ? (
         <button id="btn_afazer" onClick={toggleModal}>
           Adicionar afazeres
         </button>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
       <div id="modal" className="hide">
         <div className="modal_header">
           <h3>Afazer do Paciente</h3>
@@ -204,6 +208,7 @@ const TodoList = () => {
                 name="horario"
                 id="horario"
                 value={horario}
+                required
                 onChange={(e) => setHorario(e.target.value)}
               />
             </div>
@@ -214,6 +219,7 @@ const TodoList = () => {
                 name="titulo_afazer"
                 id="titulo_afazer"
                 value={tituloAfazer}
+                required
                 onChange={(e) => setTituloAfazer(e.target.value)}
               />
             </div>
@@ -224,6 +230,7 @@ const TodoList = () => {
                 name="afazer"
                 id="afazer"
                 value={afazer}
+                required
                 onChange={(e) => setAfazer(e.target.value)}
               />
             </div>

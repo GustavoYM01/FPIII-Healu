@@ -72,10 +72,12 @@ const TodoPatients = ({ todo }) => {
         <div id="horario">
           <span>{todo.horario}</span>
         </div>
-        <div id="todo_afazer">
-          <p>{todo.tituloAfazer}</p>
-          <span id="desc">{todo.afazer}</span>
-        </div>
+        {window.innerWidth <= 450 ? null : (
+          <div id="todo_afazer">
+            <p>{todo.tituloAfazer}</p>
+            <span id="desc">{todo.afazer}</span>
+          </div>
+        )}
         <div id="paciente">
           <p>Paciente</p>
           <span id="nome_pac">{todo.paciente}</span>
