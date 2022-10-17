@@ -1,2 +1,4 @@
 node_modules
 .env
+key_ssh
+key_ssh.pub
