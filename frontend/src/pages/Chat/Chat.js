@@ -30,12 +30,14 @@ const Chat = () => {
   const btnToggle = document.querySelector(".btn_toggle");
   const menuNav = document.querySelector(".menu_navigation");
   const arrowIcon = document.querySelector(".arrow_icon");
+  const arrowUpDown = document.querySelector(".arrowUpDown");
   const user_wrapperSelectedUser = document.querySelector(
     ".user_wrapper.selected_user"
   );
 
   if (user_wrapperSelectedUser) {
-    if (sideBar && btnToggle && menuNav && arrowIcon) {
+    if (sideBar && btnToggle && menuNav && arrowIcon && arrowUpDown) {
+      arrowUpDown.style.opacity = "1";
       menuNav.classList.remove("small");
       arrowIcon.src = ArrowRight;
       sideBar.style.marginLeft = "-15em";
@@ -126,8 +128,13 @@ const Chat = () => {
   };
 
   const toggleSidebar = (e) => {
-    if (sideBar && btnToggle && menuNav && arrowIcon) {
+    if (sideBar && btnToggle && menuNav && arrowIcon && arrowUpDown) {
       arrowIcon.src = ArrowLeft;
+      if (arrowUpDown.style.opacity === "0") {
+        arrowUpDown.style.opacity = "1";
+      } else {
+        arrowUpDown.style.opacity = "0";
+      }
       if (window.innerWidth <= 450) {
         if (menuNav.style.opacity === "0") {
           menuNav.style.opacity = "1";

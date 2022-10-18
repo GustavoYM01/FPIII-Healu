@@ -38,48 +38,85 @@ const MenuNavigation = ({ hrefPage }) => {
 
   setTimeout(toggleIcon, 20);
 
+  const handleToggle = () => {
+    const img = document.querySelector("#upDown");
+    const menuNav = document.querySelector(".menu_navigation");
+    if (img && menuNav) {
+      if (
+        menuNav.style.opacity === "0" ||
+        menuNav.style.pointerEvents === "none"
+      ) {
+        img.src = ArrowUp;
+        menuNav.style.opacity = "1";
+        menuNav.style.pointerEvents = "all";
+      } else {
+        img.src = ArrowDown;
+        menuNav.style.opacity = "0";
+        menuNav.style.pointerEvents = "none";
+      }
+    }
+  };
+
   return (
     <>
       {window.innerHeight === 568 ? (
-        <nav className="menu_navigation small">
-          <ul>
-            <li>
-              <NavLink to="/lista">
-                <img id="todolist" src={ClipBoard} alt="Lembretes" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/chat">
-                <img id="chat" src={Chat2} alt="Chat" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/">
-                <img id="call" src={Call2} alt="Ligação" />
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <div>
+          <div className="arrowUpDown" onClick={handleToggle}>
+            <img
+              id="upDown"
+              src={ArrowUp || ArrowDown}
+              alt="Habilita/Desabilita menu"
+            />
+          </div>
+          <nav className="menu_navigation small">
+            <ul>
+              <li>
+                <NavLink to="/lista">
+                  <img id="todolist" src={ClipBoard} alt="Lembretes" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/chat">
+                  <img id="chat" src={Chat2} alt="Chat" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/">
+                  <img id="call" src={Call2} alt="Ligação" />
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
       ) : (
-        <nav className="menu_navigation">
-          <ul>
-            <li>
-              <NavLink to="/lista">
-                <img id="todolist" src={ClipBoard} alt="Lembretes" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/chat">
-                <img id="chat" src={Chat2} alt="Chat" />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/">
-                <img id="call" src={Call2} alt="Ligação" />
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <div>
+          <div className="arrowUpDown" onClick={handleToggle}>
+            <img
+              id="upDown"
+              src={ArrowUp || ArrowDown}
+              alt="Habilita/Desabilita menu"
+            />
+          </div>
+          <nav className="menu_navigation">
+            <ul>
+              <li>
+                <NavLink to="/lista">
+                  <img id="todolist" src={ClipBoard} alt="Lembretes" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/chat">
+                  <img id="chat" src={Chat2} alt="Chat" />
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/">
+                  <img id="call" src={Call2} alt="Ligação" />
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
       )}
     </>
   );

@@ -76,7 +76,6 @@ a {
   color: var(--main_blue);
   text-align: left;
   max-width: 6em;
-  /* line-height: 1.5; */
   font-size: 6em;
   font-weight: 900;
   word-wrap: break-word;
@@ -1011,11 +1010,7 @@ input[type="radio"]:checked {
 }
 
 .me {
-  background: linear-gradient(
-    180deg,
-    var(--main_darkBlue) 0%,
-    var(--main_darkBlue) 100%
-  );
+  background: var(--main_blue);
   color: var(--white);
   word-wrap: break-word;
 }
@@ -1326,5 +1321,19 @@ input[type="radio"]:checked {
   .input_roomNameMobile button {
     margin: 1em 0 0 32%;
     width: 35%;
+  }
+  .arrowUpDown {
+    width: 30px;
+    height: 30px;
+    background-color: var(--main_blue);
+    border-radius: 50%;
+    position: fixed;
+    top: 0.6em;
+    left: 1em;
+    z-index: 8;
+    transition: 0.2s;
+  }
+  .arrowUpDown img {
+    margin: 0.1em 0 0 0.24em;
   }
 }
