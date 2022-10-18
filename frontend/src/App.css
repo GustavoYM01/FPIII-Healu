@@ -193,7 +193,7 @@ input[type="text"] {
 /************************************************** FORGOT PASSWORD part **************************************************/
 
 #forgot_form {
-  width: 500px;
+  margin: 0 auto;
 }
 
 .forgot_pass {
@@ -229,8 +229,9 @@ input[type="text"] {
 }
 
 .container {
-  max-width: 35vw;
-  margin: 0 auto;
+  width: 22em;
+  max-width: 90%;
+  margin: 6em auto 0 auto;
 }
 
 .container main {
@@ -1278,6 +1279,9 @@ input[type="radio"]:checked {
   .message_form {
     bottom: -8%;
     left: 1.5%;
+  }
+  #forgot_form {
+    margin: 0 auto;
   }
 }
 
