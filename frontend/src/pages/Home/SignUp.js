@@ -61,79 +61,168 @@ const SignUp = () => {
   }, [authError]);
 
   return (
-    <div className="form_container">
-      <img id="logo_form2" src={logoForm} alt="logo do formulário" />
-      <form className="form_signup" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="input_userName"
-          name="userName"
-          required
-          placeholder="Digite um nome de usuario"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type="text"
-          id="input_email"
-          name="email"
-          required
-          placeholder="Digite um email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          id="input_password"
-          name="password"
-          required
-          placeholder="Digite uma senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="password"
-          id="input_confirm_password"
-          name="confirmPassword"
-          required
-          placeholder="Confirme a senha"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <p id="question">Você é um profissional da saúde?</p>
-        <div className="yes">
-          <input
-            type="radio"
-            name="healthProfessional"
-            id="healthProfessional"
-            value="true"
-            onChange={(e) => setHealthProfessional(e.target.value)}
-          />
-          <label>Sim</label>
+    <>
+      {window.innerHeight <= 568 ? (
+        <div className="form_container">
+          <img id="logo_form2" src={logoForm} alt="logo do formulário" />
+          <div class="scroll-down"></div>
+          <form className="form_signup" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="input_userName"
+              name="userName"
+              required
+              placeholder="Digite um nome de usuario"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              type="text"
+              id="input_email"
+              name="email"
+              required
+              placeholder="Digite um email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              id="input_password"
+              name="password"
+              required
+              placeholder="Digite uma senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              id="input_confirm_password"
+              name="confirmPassword"
+              required
+              placeholder="Confirme a senha"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <p id="question">Você é um profissional da saúde?</p>
+            <div className="yes">
+              <input
+                type="radio"
+                name="healthProfessional"
+                id="healthProfessional"
+                value="true"
+                onChange={(e) => setHealthProfessional(e.target.value)}
+              />
+              <label>Sim</label>
+            </div>
+            <div className="no">
+              <input
+                type="radio"
+                name="healthProfessional"
+                id="healthProfessional"
+                value="false"
+                onChange={(e) => setHealthProfessional(e.target.value)}
+              />
+              <label>Não</label>
+            </div>
+            {!loading && (
+              <input type="submit" id="input_submit2" value="Criar conta" />
+            )}
+            {loading && (
+              <input
+                type="submit"
+                id="input_submit2"
+                disabled
+                value="aguarde..."
+              />
+            )}
+          </form>
+          <div id="after_form2">
+            <p>Já possui uma conta?</p>
+            <a href="/entrar">Entre</a>
+          </div>
+          {error && <p className="error">{error}</p>}
         </div>
-        <div className="no">
-          <input
-            type="radio"
-            name="healthProfessional"
-            id="healthProfessional"
-            value="false"
-            onChange={(e) => setHealthProfessional(e.target.value)}
-          />
-          <label>Não</label>
+      ) : (
+        <div className="form_container">
+          <img id="logo_form2" src={logoForm} alt="logo do formulário" />
+          <form className="form_signup" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="input_userName"
+              name="userName"
+              required
+              placeholder="Digite um nome de usuario"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              type="text"
+              id="input_email"
+              name="email"
+              required
+              placeholder="Digite um email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              id="input_password"
+              name="password"
+              required
+              placeholder="Digite uma senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              id="input_confirm_password"
+              name="confirmPassword"
+              required
+              placeholder="Confirme a senha"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <p id="question">Você é um profissional da saúde?</p>
+            <div className="yes">
+              <input
+                type="radio"
+                name="healthProfessional"
+                id="healthProfessional"
+                value="true"
+                onChange={(e) => setHealthProfessional(e.target.value)}
+              />
+              <label>Sim</label>
+            </div>
+            <div className="no">
+              <input
+                type="radio"
+                name="healthProfessional"
+                id="healthProfessional"
+                value="false"
+                onChange={(e) => setHealthProfessional(e.target.value)}
+              />
+              <label>Não</label>
+            </div>
+            {!loading && (
+              <input type="submit" id="input_submit2" value="Criar conta" />
+            )}
+            {loading && (
+              <input
+                type="submit"
+                id="input_submit2"
+                disabled
+                value="aguarde..."
+              />
+            )}
+          </form>
+          <div id="after_form2">
+            <p>Já possui uma conta?</p>
+            <a href="/entrar">Entre</a>
+          </div>
+          {error && <p className="error">{error}</p>}
         </div>
-        {!loading && (
-          <input type="submit" id="input_submit2" value="Criar conta" />
-        )}
-        {loading && (
-          <input type="submit" id="input_submit2" disabled value="aguarde..." />
-        )}
-      </form>
-      <div id="after_form2">
-        <p>Já possui uma conta?</p>
-        <a href="/entrar">Entre</a>
-      </div>
-      {error && <p className="error">{error}</p>}
-    </div>
+      )}
+    </>
   );
 };
 
