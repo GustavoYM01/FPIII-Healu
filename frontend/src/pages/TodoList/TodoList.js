@@ -254,7 +254,7 @@ const TodoList = () => {
         </div>
       </div>
       {afazeresPaciente.length > 0 ? ( // cards dos afazeres (para o profissional)
-        <div className="todoPatients">
+        <div className="todoPatients prof">
           {afazeresPaciente.map((afazeres) => (
             <TodoPatients key={afazeres.uid} todo={afazeres} />
           ))}

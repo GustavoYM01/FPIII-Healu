@@ -1286,6 +1286,12 @@ input[type="radio"]:checked {
 }
 
 @media only screen and (max-width: 500px) {
+  .todoPatients.prof {
+    margin-top: 2em;
+  }
+  .todoPatients {
+    margin-top: 10em;
+  }
   #logo_form2 {
     margin-top: 2vh;
   }
