@@ -1,4 +1,4 @@
-<h1>Healu <img width="40px" height="40px" src="https://ctrlv.link/shots/2022/10/19/vTNb.png" /></h1>
+<h1>Healu <img width="50px" height="50px" src="https://ctrlv.link/shots/2022/10/19/vTNb.png" /></h1>
 
 <p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional de saúde.</p><br>
 
