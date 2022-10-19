@@ -93,7 +93,7 @@ const Sidebar = () => {
   const arrowIcon = document.querySelector(".arrow_icon");
   const arrowUpDown = document.querySelector(".arrowUpDown");
 
-  const toggleSidebar = (e) => {
+  const toggleSidebar = () => {
     if (sideBar && btnToggle && menuNav && arrowIcon && arrowUpDown) {
       arrowIcon.src = ArrowLeft;
       if (arrowUpDown.style.opacity === "0") {

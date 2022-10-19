@@ -166,7 +166,7 @@ const Chat = () => {
     setText("");
   };
 
-  const toggleSidebar = (e) => {
+  const toggleSidebar = () => {
     if (sideBar && btnToggle && menuNav && arrowIcon && arrowUpDown) {
       arrowIcon.src = ArrowLeft;
       if (arrowUpDown.style.opacity === "0") {
