@@ -12,7 +12,6 @@ import ArrowLeft from "../imgs/arrowLeft.svg";
 import ArrowRight from "../imgs/arrowRight.svg";
 
 const Sidebar = () => {
-  const [users, setUsers] = useState([]);
   const [pacientes, setPacientes] = useState([]);
   const [prof, setProf] = useState([]);
   const [profSaude, setProfSaude] = useState([]);
