@@ -21,10 +21,13 @@ const ForgotPassword = () => {
         "Email enviado com sucesso! Verifique a sua caixa de emails"
       );
       function returnToSignIn() {
-        if (window.location.href === "http://localhost:5000/esquecisenha") {
-          window.location.assign("http://localhost:5000/entrar");
+        if (
+          window.location.href ===
+          "https://healudropdata.netlify.app/esquecisenha"
+        ) {
+          window.location.assign("https://healudropdata.netlify.app/entrar");
         } else {
-          window.location.assign("http://localhost:5001/entrar");
+          window.location.assign("https://healudropdata.netlify.app/entrar");
         }
       }
       setTimeout(returnToSignIn, 3600);
