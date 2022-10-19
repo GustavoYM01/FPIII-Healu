@@ -11,6 +11,7 @@ import {
   setDoc,
   doc,
   getDoc,
+  getDocs,
   updateDoc,
 } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
@@ -47,25 +48,63 @@ const Chat = () => {
     }
   }
 
-  const [users, setUsers] = useState([]);
+  const [msgs, setMsgs] = useState([]);
+  const [pacientes, setPacientes] = useState([]);
+  const [prof, setProf] = useState([]);
+  const [profSaude, setProfSaude] = useState([]);
   const [chat, setChat] = useState("");
   const [text, setText] = useState("");
   const [img, setImg] = useState("");
-  const [msgs, setMsgs] = useState([]);
 
   const user1 = auth.currentUser.uid;
+  const currentUser = user1;
+  let nomeProfSaude = [];
+
+  const boolean = true;
+  const boolean2 = false;
 
   useEffect(() => {
+    // Profissional da saúde (renderizar para o paciente)
     const usersRef = collection(db, "users");
-    const q = query(usersRef, where("uid", "not-in", [user1]));
+    const q = query(usersRef, where("isHealthProfessional", "in", [boolean]));
     const unsub = onSnapshot(q, (querySnapshot) => {
       let users = [];
       querySnapshot.forEach((doc) => {
         users.push(doc.data());
       });
-      setUsers(users);
+      setProf(users);
     });
     return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    // Pacientes (renderizar para o profissional da saúde)
+    const usersRef = collection(db, "users");
+    const q = query(usersRef, where("isHealthProfessional", "in", [boolean2]));
+    const unsub = onSnapshot(q, (querySnapshot) => {
+      let users = [];
+      querySnapshot.forEach((doc) => {
+        users.push(doc.data());
+      });
+      setPacientes(users);
+    });
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    // Para validação do login (ver se é ou não, um profissional da saúde)
+    const teste = async () => {
+      const q = query(
+        collection(db, "users"),
+        where("uid", "in", [currentUser])
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        nomeProfSaude.push(doc.data());
+      });
+      setProfSaude(nomeProfSaude);
+    };
+    teste();
   }, []);
 
   const selectUser = async (user) => {
@@ -186,15 +225,34 @@ const Chat = () => {
             />
           </div>
         ) : null}
-        {users.map((user) => (
-          <User
-            key={user.uid}
-            user={user}
-            selectUser={selectUser}
-            user1={user1}
-            chat={chat}
-          />
-        ))}
+        <>
+          {profSaude.length > 0 &&
+          profSaude[0].isHealthProfessional === false ? (
+            <>
+              {prof.map((prof) => (
+                <User
+                  key={prof.uid}
+                  user={prof}
+                  selectUser={selectUser}
+                  user1={user1}
+                  chat={chat}
+                />
+              ))}
+            </>
+          ) : (
+            <>
+              {pacientes.map((paciente) => (
+                <User
+                  key={paciente.uid}
+                  user={paciente}
+                  selectUser={selectUser}
+                  user1={user1}
+                  chat={chat}
+                />
+              ))}
+            </>
+          )}
+        </>
       </div>
       <MenuNavigation hrefPage={hrefPage} />
       <Navbar />
