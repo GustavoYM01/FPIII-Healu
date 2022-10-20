@@ -5,13 +5,12 @@ export default function Video() {
   const hrefPage = window.location.href;
   const splitHrefPage = hrefPage.split("/");
   const id = splitHrefPage[4];
-  console.log(id);
 
   useEffect(() => {
-    const domain = "https:///yellowhealth.daily.co/";
+    const domain = "https://yellowhealth.daily.co/";
 
     axios
-      .get(`/video-call/${id}`)
+      .get(`/video/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const script = document.createElement("script");
