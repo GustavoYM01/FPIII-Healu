@@ -23,7 +23,7 @@
 <p><strong>Equipe:</strong></p>
 <div>
   <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/qlDS.png" />
-  <p>UI/UX Designer</p><br>
+  <p>UI/UX Designer</p>
   <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/FlUw.png" />
   <p>Product Owner</p>
   <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/KHmq.png" />
