@@ -13,11 +13,22 @@
 > ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 <br>
-<p><strong>Ferramentas utilizadas (dev e design):</strong></p>
+<p><strong>Ferramentas utilizadas (design e editor de código):</strong></p>
 
 > ![image](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
 > ![image](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+<br>
+
+<p><strong>Equipe:</strong></p>
+<div>
+  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/qlDS.png" />
+  <p>UI/UX Designer</p><br>
+  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/FlUw.png" />
+  <p>Product Owner</p>
+  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/KHmq.png" />
+  <p>Developer</p>
+</div>
 
 <br>
 <p>Projeto:</p>
