@@ -3,6 +3,7 @@ import PaperPlane from "../imgs/paperPlane.svg";
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
   const msgInp = document.querySelector("#inp_msg");
+
   return (
     <form className="message_form" onSubmit={handleSubmit}>
       <label htmlFor="img">
@@ -25,7 +26,17 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
         />
       </div>
       <div>
-        {msgInp && msgInp.value.length === 0 ? (
+        {msgInp && msgInp.value !== "" ? (
+          <>
+            <img
+              id="enter_msg"
+              src={PaperPlane}
+              alt="Ícone enviar msg"
+              onClick={handleSubmit}
+            />
+            <input id="btn" type="submit" value="" />
+          </>
+        ) : (
           <>
             <img id="enter_msg" src={PaperPlane} alt="Ícone enviar msg" />
             <input
@@ -35,16 +46,6 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
               value=""
               disabled
             />
-          </>
-        ) : (
-          <>
-            <img
-              id="enter_msg"
-              src={PaperPlane}
-              alt="Ícone enviar msg"
-              onClick={handleSubmit}
-            />
-            <input id="btn" type="submit" value="" />
           </>
         )}
       </div>

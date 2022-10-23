@@ -79,8 +79,8 @@ const SignIn = () => {
                   <input
                     type="submit"
                     id="input_submit"
-                    disabled
                     value="aguarde..."
+                    disabled
                   />
                 )}
               </form>

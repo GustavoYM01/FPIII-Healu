@@ -141,7 +141,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      {window.innerWidth <= 1000 ? (
+      {window.innerWidth <= 1082 ? (
         <div className="btn_toggle" onClick={toggleSidebar}>
           <img
             className="arrow_icon"

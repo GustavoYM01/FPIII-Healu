@@ -38,6 +38,11 @@ const Chat = () => {
 
   if (user_wrapperSelectedUser) {
     if (sideBar && btnToggle && menuNav && arrowIcon && arrowUpDown) {
+      if (window.innerWidth <= 1082 && window.innerWidth >= 768) {
+        menuNav.style.marginLeft = "-15em";
+        menuNav.style.opacity = "0";
+        menuNav.style.pointerEvents = "none";
+      }
       arrowUpDown.style.opacity = "1";
       menuNav.classList.remove("small");
       arrowIcon.src = ArrowRight;
@@ -131,6 +136,7 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setText("");
     const user2 = chat.uid;
 
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;
@@ -162,8 +168,6 @@ const Chat = () => {
       media: url || "",
       unread: true,
     });
-
-    setText("");
   };
 
   const toggleSidebar = () => {
@@ -216,7 +220,7 @@ const Chat = () => {
   return (
     <div className="center_container">
       <div className="sidebar">
-        {window.innerWidth <= 1000 ? (
+        {window.innerWidth <= 1082 ? (
           <div className="btn_toggle" onClick={toggleSidebar}>
             <img
               className="arrow_icon"

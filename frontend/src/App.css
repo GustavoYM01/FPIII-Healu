@@ -383,6 +383,8 @@ input[type="radio"]:checked {
   top: 0;
   left: 0;
   transition: 0.2s;
+  overflow: auto;
+  z-index: 10;
 }
 
 .btn_toggle {
@@ -492,6 +494,7 @@ input[type="radio"]:checked {
   top: 35%;
   left: 13em;
   transition: 0.2s;
+  z-index: 10;
 }
 
 .menu_navigation ul {
@@ -569,7 +572,7 @@ input[type="radio"]:checked {
 /********************************************** TODOLIST **********************************************/
 
 .center_container {
-  width: 50vw;
+  width: 90vw;
   height: 90vh;
   margin: 0 auto;
 }
@@ -677,7 +680,7 @@ input[type="radio"]:checked {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 9;
+  z-index: 10;
 }
 
 .modal_header {
@@ -810,10 +813,11 @@ input[type="radio"]:checked {
 
 #todo_afazer {
   max-width: 180px;
+  max-height: 100px;
   justify-content: center;
   align-items: center;
   text-align: center;
-  word-break: break-all;
+  overflow: auto;
 }
 
 #todo_afazer p,
@@ -823,8 +827,15 @@ input[type="radio"]:checked {
   margin: 0 auto 0.5em auto;
 }
 
+p#nome_pac,
+p#desc {
+  font-weight: 500;
+  text-align: left;
+}
+
 #paciente {
   text-align: center;
+  overflow: auto;
 }
 
 #details {
@@ -953,8 +964,9 @@ input[type="radio"]:checked {
 /************************************************** CHAT **************************************************/
 
 .messages_container {
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+  width: 60%;
 }
 
 .messages_user {
@@ -972,14 +984,10 @@ input[type="radio"]:checked {
 .messages {
   height: calc(100vh - 200px);
   width: 100%;
-  overflow-y: auto;
+  overflow: auto;
   margin-top: 0.4em;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.messages::-webkit-scrollbar {
-  display: none;
 }
 
 .message_wrapper {
@@ -1059,6 +1067,15 @@ input[type="radio"]:checked {
   cursor: pointer;
 }
 
+#enter_msg2 {
+  width: 32px;
+  height: 32px;
+  padding-top: 0.38em;
+  position: absolute;
+  cursor: pointer;
+  left: 74.3%;
+}
+
 #btn {
   cursor: pointer;
   border-radius: 50%;
@@ -1090,11 +1107,11 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 30em;
+  top: 10em;
 }
 
 .input_roomName input {
-  width: 25vw;
+  width: 45vw;
   margin: 0 1em;
   padding: 10px;
   border-radius: 5px;
@@ -1247,6 +1264,46 @@ input[type="radio"]:checked {
 }
 
 /********************************************** BREAKPOINTS **********************************************/
+@media only screen and (max-width: 1082px) {
+  #enter_msg2 {
+    left: 74.1%;
+  }
+  .messages_container {
+    width: 80%;
+  }
+  .sidebar,
+  .btn_toggle {
+    transition: 0.2s;
+    margin-left: -15em;
+    z-index: 9;
+  }
+  .menu_navigation {
+    transition: 0.2s;
+    margin-left: -15em;
+    z-index: 8;
+  }
+  .btn_toggle {
+    background-color: var(--main_blue);
+  }
+  .no_conv {
+    max-width: 16.8em;
+    margin: 0 auto;
+  }
+  .content_navbar {
+    right: 3em;
+  }
+  .messages {
+    height: 76vh;
+    overflow-y: auto;
+  }
+  .message_form {
+    bottom: -8%;
+    left: 1.5%;
+  }
+  #forgot_form {
+    margin: 0 auto;
+  }
+}
 @media only screen and (max-width: 1003px) {
   #divForm h2 {
     font-size: 5em;
@@ -1269,6 +1326,7 @@ input[type="radio"]:checked {
   }
   .no_conv {
     max-width: 16.8em;
+    margin: 0 auto;
   }
   .content_navbar {
     right: 3em;
@@ -1285,8 +1343,28 @@ input[type="radio"]:checked {
     margin: 0 auto;
   }
 }
-
+@media only screen and (max-width: 895px) {
+  #enter_msg2 {
+    left: 73.9%;
+  }
+}
+@media only screen and (max-width: 680px) {
+  #enter_msg2 {
+    left: 73.4%;
+  }
+}
+@media only screen and (max-width: 502px) {
+  #enter_msg2 {
+    left: 61%;
+  }
+}
 @media only screen and (max-width: 500px) {
+  p#nome_pac {
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .todoPatients.prof {
     margin-top: 2em;
   }

@@ -55,7 +55,7 @@ const TodoPatients = ({ todo }) => {
   };
 
   return (
-    <div>
+    <div id="todo_container">
       <FormDialog
         open={open}
         setOpen={setOpen}
@@ -75,12 +75,12 @@ const TodoPatients = ({ todo }) => {
         {window.innerWidth <= 450 ? null : (
           <div id="todo_afazer">
             <p>{todo.tituloAfazer}</p>
-            <span id="desc">{todo.afazer}</span>
+            <p id="desc">{todo.afazer}</p>
           </div>
         )}
         <div id="paciente">
           <p>Paciente</p>
-          <span id="nome_pac">{todo.paciente}</span>
+          <p id="nome_pac">{todo.paciente}</p>
         </div>
         {user.length > 0 && user[0].isHealthProfessional !== false ? (
           <button id="btn_excluir" onClick={() => handleDel(todo)}>
