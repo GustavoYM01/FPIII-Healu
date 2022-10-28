@@ -60,6 +60,7 @@ const Chat = () => {
   const [chat, setChat] = useState("");
   const [text, setText] = useState("");
   const [img, setImg] = useState("");
+  const [busca, setBusca] = useState("");
 
   const user1 = auth.currentUser.uid;
   const currentUser = user1;
@@ -220,6 +221,14 @@ const Chat = () => {
   return (
     <div className="center_container">
       <div className="sidebar">
+        <input
+          type="text"
+          id="search_user"
+          placeholder="Procurar pelo usuário"
+          onChange={(e) => {
+            setBusca(e.target.value);
+          }}
+        />
         {window.innerWidth <= 1082 ? (
           <div className="btn_toggle" onClick={toggleSidebar}>
             <img
@@ -233,27 +242,47 @@ const Chat = () => {
           {profSaude.length > 0 &&
           profSaude[0].isHealthProfessional === false ? (
             <>
-              {prof.map((prof) => (
-                <User
-                  key={prof.uid}
-                  user={prof}
-                  selectUser={selectUser}
-                  user1={user1}
-                  chat={chat}
-                />
-              ))}
+              {prof
+                .filter((val) => {
+                  if (busca === "") {
+                    return val;
+                  } else if (
+                    val.userName.toLowerCase().includes(busca.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((prof) => (
+                  <User
+                    key={prof.uid}
+                    user={prof}
+                    selectUser={selectUser}
+                    user1={user1}
+                    chat={chat}
+                  />
+                ))}
             </>
           ) : (
             <>
-              {pacientes.map((paciente) => (
-                <User
-                  key={paciente.uid}
-                  user={paciente}
-                  selectUser={selectUser}
-                  user1={user1}
-                  chat={chat}
-                />
-              ))}
+              {pacientes
+                .filter((val) => {
+                  if (busca === "") {
+                    return val;
+                  } else if (
+                    val.userName.toLowerCase().includes(busca.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((paciente) => (
+                  <User
+                    key={paciente.uid}
+                    user={paciente}
+                    selectUser={selectUser}
+                    user1={user1}
+                    chat={chat}
+                  />
+                ))}
             </>
           )}
         </>

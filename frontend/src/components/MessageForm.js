@@ -3,6 +3,8 @@ import PaperPlane from "../imgs/paperPlane.svg";
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
   const msgInp = document.querySelector("#inp_msg");
+  const imgInp = document.querySelector("#img");
+  const msgForm = document.querySelector(".message_form");
 
   return (
     <form className="message_form" onSubmit={handleSubmit}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { db, auth } from "../firebase/config";
 import {
   collection,
@@ -16,10 +16,18 @@ const Sidebar = () => {
   const [prof, setProf] = useState([]);
   const [profSaude, setProfSaude] = useState([]);
   const [chat, setChat] = useState("");
+  const [busca, setBusca] = useState("");
+
+  // useMemo(() => {
+  //   console.log(busca);
+  // }, [busca]);
 
   const currentUser = auth.currentUser.uid;
 
   let nomeProfSaude = [];
+
+  const boolean = true;
+  const boolean2 = false;
 
   useEffect(() => {
     // Qualquer usuário
@@ -34,9 +42,6 @@ const Sidebar = () => {
     });
     return () => unsub();
   }, []);
-
-  const boolean = true;
-  const boolean2 = false;
 
   useEffect(() => {
     // Profissional da saúde (renderizar para o paciente)
@@ -153,19 +158,55 @@ const Sidebar = () => {
       <>
         {profSaude.length > 0 && profSaude[0].isHealthProfessional === false ? (
           <>
-            {prof.map((prof) => (
-              <User key={prof.uid} user={prof} selectUser={selectUser} />
-            ))}
+            <input
+              type="text"
+              id="search_user"
+              placeholder="Procurar pelo usuário"
+              onChange={(e) => {
+                setBusca(e.target.value);
+              }}
+            />
+            {prof
+              .filter((val) => {
+                if (busca === "") {
+                  return val;
+                } else if (
+                  val.userName.toLowerCase().includes(busca.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
+              .map((prof) => (
+                <User key={prof.uid} user={prof} selectUser={selectUser} />
+              ))}
           </>
         ) : (
           <>
-            {pacientes.map((paciente) => (
-              <User
-                key={paciente.uid}
-                user={paciente}
-                selectUser={selectUser}
-              />
-            ))}
+            <input
+              type="text"
+              id="search_user"
+              placeholder="Procurar pelo usuário"
+              onChange={(e) => {
+                setBusca(e.target.value);
+              }}
+            />
+            {pacientes
+              .filter((val) => {
+                if (busca === "") {
+                  return val;
+                } else if (
+                  val.userName.toLowerCase().includes(busca.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
+              .map((paciente) => (
+                <User
+                  key={paciente.uid}
+                  user={paciente}
+                  selectUser={selectUser}
+                />
+              ))}
           </>
         )}
       </>
