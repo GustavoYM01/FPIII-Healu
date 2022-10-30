@@ -48,7 +48,7 @@ const SignIn = () => {
             </div>
           </div>
           <div id="divForm">
-            <h2>Lorem ipsum dolor</h2>
+            <h2>Sua saúde em suas mãos!</h2>
             <div>
               <form className="form_signin" onSubmit={handleSubmit}>
                 <input
@@ -101,7 +101,7 @@ const SignIn = () => {
             </div>
           </div>
           <div id="divForm">
-            <h2>Lorem ipsum dolor</h2>
+            <h2>Sua saúde em suas mãos!</h2>
             <div>
               <form className="form_signin" onSubmit={handleSubmit}>
                 <input

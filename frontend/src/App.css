@@ -75,7 +75,7 @@ a {
   box-sizing: border-box;
   color: var(--main_blue);
   text-align: left;
-  max-width: 6em;
+  max-width: 8em;
   font-size: 6em;
   font-weight: 900;
   word-wrap: break-word;
@@ -1274,6 +1274,11 @@ p#desc {
 }
 
 /********************************************** BREAKPOINTS **********************************************/
+@media only screen and (max-width: 1091px) {
+  #divForm h2 {
+    font-size: 5em;
+  }
+}
 @media only screen and (max-width: 1082px) {
   #enter_msg2 {
     left: 74.1%;
@@ -1353,9 +1358,19 @@ p#desc {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 983px) {
+  #divForm h2 {
+    font-size: 4em;
+  }
+}
 @media only screen and (max-width: 895px) {
   #enter_msg2 {
     left: 73.9%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #divForm h2 {
+    font-size: 3.5em;
   }
 }
 @media only screen and (max-width: 680px) {
