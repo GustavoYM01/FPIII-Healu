@@ -18,10 +18,6 @@ const Sidebar = () => {
   const [chat, setChat] = useState("");
   const [busca, setBusca] = useState("");
 
-  // useMemo(() => {
-  //   console.log(busca);
-  // }, [busca]);
-
   const currentUser = auth.currentUser.uid;
 
   let nomeProfSaude = [];

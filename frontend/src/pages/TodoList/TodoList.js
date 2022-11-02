@@ -15,24 +15,6 @@ import TodoPatients from "../../components/TodoPatients";
 import Modal from "../../components/Modal";
 import DaysOfWeek from "../../components/DaysOfWeek";
 
-// const dayOfWeek = () => {
-//   let semana = [
-//     "Domingo",
-//     "Segunda-Feira",
-//     "Terça-Feira",
-//     "Quarta-Feira",
-//     "Quinta-Feira",
-//     "Sexta-Feira",
-//     "Sábado",
-//   ];
-
-//   let d = new Date();
-
-//   document.getElementById("week_day").innerText = `${
-//     semana[d.getDay()]
-//   } - ${d.getDate()}`;
-// };
-
 const TodoList = () => {
   const [afazeresPaciente, setAfazeresPaciente] = useState([]);
   const [afazeresPacPaciente, setAfazeresPacPaciente] = useState([]);
@@ -103,9 +85,6 @@ const TodoList = () => {
       <Navbar />
       <div id="fade" className="hide"></div>
       {window.innerWidth > 450 ? <DaysOfWeek /> : null}
-      {/* {window.innerWidth > 450 ? (
-        <h2 id="week_day">{setTimeout(dayOfWeek, 15)}</h2>
-      ) : null} */}
       {profSaude.length > 0 && profSaude[0].isHealthProfessional !== false ? (
         <button id="btn_afazer" onClick={toggleModal}>
           Adicionar afazeres
