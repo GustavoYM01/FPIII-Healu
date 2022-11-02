@@ -817,7 +817,6 @@ input[type="radio"]:checked {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: auto;
 }
 
 #todo_afazer p,
@@ -831,11 +830,17 @@ p#nome_pac,
 p#desc {
   font-weight: 500;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p#desc {
+  max-width: 100px;
+  max-height: 50px;
 }
 
 #paciente {
   text-align: center;
-  overflow: auto;
 }
 
 #details {
