@@ -1,6 +1,6 @@
 <h1>Healu <img width="50px" height="50px" src="https://i.ibb.co/ZT3Pg5Y/Healu.png" alt="Healu" border="0" /></h1>
 
-<p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional de saúde.</p><br>
+<p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional da saúde.</p><br>
 
 <p><strong>Tecnologias utilizadas:</strong></p>
 
