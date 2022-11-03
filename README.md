@@ -1,4 +1,4 @@
-<h1>Healu <img width="50px" height="50px" src="https://ctrlv.link/shots/2022/10/19/vTNb.png" /></h1>
+<h1>Healu <img width="50px" height="50px" src="https://i.ibb.co/ZT3Pg5Y/Healu.png" alt="Healu" border="0" /></h1>
 
 <p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional de saúde.</p><br>
 
@@ -22,11 +22,11 @@
 
 <p><strong>Equipe:</strong></p>
 <div>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/qlDS.png" />
+  <img width="150px" height="auto" src="https://i.ibb.co/FXcS0P9/leo.jpg" alt="leo" border="0" />
   <p>UI/UX Designer</p>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/FlUw.png" />
+  <img width="150px" height="auto" src="https://i.ibb.co/xD27RSb/joao.jpg" alt="joao" border="0" />
   <p>Product Owner</p>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/KHmq.png" />
+  <img width="150px" height="auto" src="https://i.ibb.co/5rr857w/me.jpg" alt="me" border="0" />
   <p>Developer</p>
 </div>
 
