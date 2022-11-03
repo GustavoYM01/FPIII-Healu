@@ -8,6 +8,10 @@
 
 > ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
+> ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+> ![image](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
+
 > ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 > ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -23,13 +27,13 @@
 <p><strong>Equipe:</strong></p>
 <div>
   <img width="150px" height="auto" src="https://i.ibb.co/FXcS0P9/leo.jpg" alt="leo" border="0" />
-  <p>UI/UX Designer</p>
+  <p><strong>Leonardo do Vale Santos</strong> (UI/UX Designer)</p>
   <img width="150px" height="auto" src="https://i.ibb.co/xD27RSb/joao.jpg" alt="joao" border="0" />
-  <p>Product Owner</p>
+  <p><strong>João Pedro Bonadia Menon</strong> (Product Owner)</p>
   <img width="150px" height="auto" src="https://i.ibb.co/5rr857w/me.jpg" alt="me" border="0" />
-  <p>Developer</p>
+  <p><strong>Gustavo Yamashita Matimoto</strong> (Developer)</p>
 </div>
 
 <br>
-<p>Projeto:</p>
-https://healudropdata.netlify.app/
+<p><strong>Projeto:</strong></p>
+<a href="https://healudropdata.netlify.app/entrar"><img src="https://i.ibb.co/jWKhNGB/Healu-App-Screenshot.png" alt="Healu-App-Screenshot" border="0"></a>
