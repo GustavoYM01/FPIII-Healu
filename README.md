@@ -25,15 +25,13 @@
 <br>
 
 <p><strong>Equipe:</strong></p>
-<div>
-  <img width="150px" height="auto" src="https://i.ibb.co/FXcS0P9/leo.jpg" alt="leo" border="0" />
-  <p><strong>Leonardo do Vale Santos</strong> (UI/UX Designer)</p>
-  <img width="150px" height="auto" src="https://i.ibb.co/xD27RSb/joao.jpg" alt="joao" border="0" />
-  <p><strong>João Pedro Bonadia Menon</strong> (Product Owner)</p>
-  <img width="150px" height="auto" src="https://i.ibb.co/5rr857w/me.jpg" alt="me" border="0" />
-  <p><strong>Gustavo Yamashita Matimoto</strong> (Developer)</p>
-</div>
+
+> <strong>Leonardo do Vale Santos</strong> (UI/UX Designer) - ```leo_valesantos@hotmail.com```
+
+> <strong>João Pedro Bonadia Menon</strong> (Product Owner) - ```jpb.menon@gmail.com```
+
+> <strong>Gustavo Yamashita Matimoto</strong> (Developer) - ```gustavo_matimoto@hotmail.com```
 
 <br>
 <p><strong>Projeto:</strong></p>
-<a href="https://healudropdata.netlify.app/entrar"><img src="https://i.ibb.co/jWKhNGB/Healu-App-Screenshot.png" alt="Healu-App-Screenshot" border="0"></a>
+<img src="https://i.ibb.co/jWKhNGB/Healu-App-Screenshot.png" alt="Healu-App-Screenshot" border="0">
