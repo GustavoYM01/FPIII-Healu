@@ -34,4 +34,15 @@
 
 <br>
 <p><strong>Projeto:</strong></p>
+
+<p>Tela de login</p>
 <img src="https://i.ibb.co/jWKhNGB/Healu-App-Screenshot.png" alt="Healu-App-Screenshot" border="0">
+
+<p>Tela de cadastro</p>
+<img src="https://i.ibb.co/Gx35YqK/Healu-signup.png" alt="Healu-signup" border="0">
+
+<p>Tela esqueci a senha</p>
+<img src="https://i.ibb.co/KjKL2np/Healu-forgot-Password.png" alt="Healu-forgot-Password" border="0">
+
+<p>Tela de afazeres/rotinas (na visão de um profissional da saúde)</p>
+<img src="https://i.ibb.co/zssmVtt/Healu-to-Do-Screen-Health-Professional.png" alt="Healu-to-Do-Screen-Health-Professional" border="0">
