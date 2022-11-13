@@ -1,12 +1,16 @@
-<h1>Healu <img width="50px" height="50px" src="https://ctrlv.link/shots/2022/10/19/vTNb.png" /></h1>
+<h1>Healu <img width="50px" height="50px" src="https://i.ibb.co/ZT3Pg5Y/Healu.png" alt="Healu" border="0" /></h1>
 
-<p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional de saúde.</p><br>
+<p>Projeto desenvolvido pela DropData, com o intuito de auxiliar na comunicação/interação entre o paciente e o profissional da saúde.</p><br>
 
 <p><strong>Tecnologias utilizadas:</strong></p>
 
 >	![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 > ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+> ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+> ![image](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 
 > ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
@@ -21,15 +25,13 @@
 <br>
 
 <p><strong>Equipe:</strong></p>
-<div>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/qlDS.png" />
-  <p>UI/UX Designer</p>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/FlUw.png" />
-  <p>Product Owner</p>
-  <img width="150px" height="auto" src="https://ctrlv.link/shots/2022/10/21/KHmq.png" />
-  <p>Developer</p>
-</div>
+
+> <strong>Leonardo do Vale Santos</strong> (UI/UX Designer) - ```leo_valesantos@hotmail.com```
+
+> <strong>João Pedro Bonadia Menon</strong> (Product Owner) - ```jpb.menon@gmail.com```
+
+> <strong>Gustavo Yamashita Matimoto</strong> (Developer) - ```gustavo_matimoto@hotmail.com```
 
 <br>
-<p>Projeto:</p>
-https://healudropdata.netlify.app/
+<p><strong>Projeto:</strong></p>
+<img src="https://i.ibb.co/jWKhNGB/Healu-App-Screenshot.png" alt="Healu-App-Screenshot" border="0">
