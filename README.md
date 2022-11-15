@@ -63,4 +63,16 @@
 <img src="https://i.ibb.co/KjKL2np/Healu-forgot-Password.png" alt="Healu-forgot-Password" border="0">
 
 <p>Tela de afazeres/rotinas (na visão de um profissional da saúde)</p>
-<img src="https://i.ibb.co/zssmVtt/Healu-to-Do-Screen-Health-Professional.png" alt="Healu-to-Do-Screen-Health-Professional" border="0">
+<img src="https://i.ibb.co/wcHSW49/Healu-to-Do-Screen-Health-Professional.png" alt="Healu-to-Do-Screen-Health-Professional" border="0">
+
+<p>Tela de afazeres/rotinas (na visão de um paciente)</p>
+<img src="https://i.ibb.co/FWsV5Vx/Healu-to-Do-Screen-Patient-part1.png" alt="Healu-to-Do-Screen-Patient-part1" border="0">
+
+<p>Mais detalhes sobre o(a) afazer/rotina (na visão de um paciente)</p>
+<img src="https://i.ibb.co/dbLrVd0/Healu-to-Do-Screen-Patient-part2.png" alt="Healu-to-Do-Screen-Patient-part2" border="0">
+
+<p>Demonstração de conversa (entre um paciente e um profissional da saúde)</p>
+<img src="https://i.ibb.co/BGgLvpN/Healu-Chat-Demo.png" alt="Healu-Chat-Demo" border="0">
+
+<p>Dados do perfil</p>
+<img src="https://i.ibb.co/10JqdHS/Healu-Profile-Datas.png" alt="Healu-Profile-Datas" border="0">
