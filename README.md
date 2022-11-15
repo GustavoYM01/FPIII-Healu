@@ -65,6 +65,9 @@
 <p>Tela de afazeres/rotinas (na visão de um profissional da saúde)</p>
 <img src="https://i.ibb.co/wcHSW49/Healu-to-Do-Screen-Health-Professional.png" alt="Healu-to-Do-Screen-Health-Professional" border="0">
 
+<p>Mais detalhes sobre o(a) afazer/rotina (na visão de um profissional da saúde)</p>
+<img src="https://i.ibb.co/GV6xBGD/Healu-to-Do-Screen-Health-Professional-part2.png" alt="Healu-to-Do-Screen-Health-Professional-part2" border="0">
+
 <p>Tela de afazeres/rotinas (na visão de um paciente)</p>
 <img src="https://i.ibb.co/FWsV5Vx/Healu-to-Do-Screen-Patient-part1.png" alt="Healu-to-Do-Screen-Patient-part1" border="0">
 
@@ -76,3 +79,6 @@
 
 <p>Dados do perfil</p>
 <img src="https://i.ibb.co/10JqdHS/Healu-Profile-Datas.png" alt="Healu-Profile-Datas" border="0">
+
+<p>Pesquisa por usuários</p>
+<img src="https://i.ibb.co/ZhPk55X/Healu-Search-For-Users.png" alt="Healu-Search-For-Users" border="0" height="420px">
