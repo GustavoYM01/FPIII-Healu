@@ -137,7 +137,12 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setText("");
+
+    const imgInp = document.querySelector("#img");
+    if (imgInp) imgInp.value = "";
+
     const user2 = chat.uid;
 
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;

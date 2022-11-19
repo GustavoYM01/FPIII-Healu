@@ -3,6 +3,7 @@ import PaperPlane from "../imgs/paperPlane.svg";
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
   const msgInp = document.querySelector("#inp_msg");
+  const imgInp = document.querySelector("#img");
 
   return (
     <form className="message_form" onSubmit={handleSubmit}>
@@ -26,7 +27,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
         />
       </div>
       <div>
-        {msgInp && msgInp.value !== "" ? (
+        {msgInp && imgInp && (msgInp.value !== "" || imgInp.value !== "") ? (
           <>
             <img
               id="enter_msg"
