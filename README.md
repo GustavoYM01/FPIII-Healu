@@ -82,3 +82,6 @@
 
 <p>Pesquisa por usuários</p>
 <img src="https://i.ibb.co/ZhPk55X/Healu-Search-For-Users.png" alt="Healu-Search-For-Users" border="0" height="420px">
+
+<p>Vídeo chamada</p>
+<img src="https://i.ibb.co/whjv5r8/Healu-video-Call.png" alt="Healu-video-Call" border="0">
