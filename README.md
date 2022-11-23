@@ -85,3 +85,11 @@
 
 <p>Vídeo chamada</p>
 <img src="https://i.ibb.co/whjv5r8/Healu-video-Call.png" alt="Healu-video-Call" border="0">
+
+<p>Para entrar em alguma sala virtual (videochamadas e afins), basta digitar o nome de uma das salas abaixo no campo específico da tela de ligações:</p>
+
+> ```duvidas-1```
+> ```duvidas-2```
+> ```duvidas-3```
+> ```duvidas-4```
+> ```duvidas-5```
