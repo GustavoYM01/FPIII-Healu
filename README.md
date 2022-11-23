@@ -71,6 +71,9 @@
 <p>Tela de afazeres/rotinas (na visão de um paciente)</p>
 <img src="https://i.ibb.co/FWsV5Vx/Healu-to-Do-Screen-Patient-part1.png" alt="Healu-to-Do-Screen-Patient-part1" border="0">
 
+<p>Tela para videochamadas</p>
+<img src="https://i.ibb.co/QHc4mWF/Healu-video-Call-Screen.png" alt="Healu-video-Call-Screen" border="0">
+
 <p>Mais detalhes sobre o(a) afazer/rotina (na visão de um paciente)</p>
 <img src="https://i.ibb.co/dbLrVd0/Healu-to-Do-Screen-Patient-part2.png" alt="Healu-to-Do-Screen-Patient-part2" border="0">
 
