@@ -467,6 +467,17 @@ input[type="radio"]:checked {
   cursor: pointer;
 }
 
+.user_wrapper.default {
+  margin-bottom: 10px;
+  padding: 0.5em;
+  cursor: default;
+  pointer-events: none;
+}
+
+.nonLink {
+  cursor: default;
+}
+
 .user_info {
   display: flex;
   justify-content: space-between;

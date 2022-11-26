@@ -20,11 +20,16 @@ const User = ({ user1, user, selectUser, chat }) => {
   }, []);
 
   return (
-    <NavLink to="/chat">
+    <NavLink
+      to={`${urlPageSplit[3] === "lista" ? "#" : "/chat"}`}
+      className={`${urlPageSplit[3] === "lista" ? "nonLink" : ""}`}
+    >
       <div
         className={`user_wrapper ${
           urlPageSplit[3] === "chat" && chat.userName === user.userName
             ? "selected_user"
+            : urlPageSplit[3] === "lista"
+            ? "default"
             : ""
         }`}
         onClick={() => selectUser(user)}

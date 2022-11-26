@@ -154,15 +154,8 @@ const Sidebar = () => {
           />
         </div>
       ) : null}
-      <AddUsers />
-      {/* <div id="container_btnAddUser">
-        <img
-          src={BtnAddUserNonHover}
-          id="btn_addUser"
-          onMouseOver={(e) => (e.currentTarget.src = BtnAddUserHover)}
-          onMouseOut={(e) => (e.currentTarget.src = BtnAddUserNonHover)}
-        />
-      </div> */}
+      {/* <AddUsers />
+      <div id="added_users"></div> */}
       <>
         {profSaude.length > 0 && profSaude[0].isHealthProfessional === false ? (
           <>
