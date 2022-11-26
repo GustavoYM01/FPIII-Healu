@@ -71,6 +71,9 @@
 <p>Tela de afazeres/rotinas (na visão de um paciente)</p>
 <img src="https://i.ibb.co/FWsV5Vx/Healu-to-Do-Screen-Patient-part1.png" alt="Healu-to-Do-Screen-Patient-part1" border="0">
 
+<p>Tela para videochamadas</p>
+<img src="https://i.ibb.co/QHc4mWF/Healu-video-Call-Screen.png" alt="Healu-video-Call-Screen" border="0">
+
 <p>Mais detalhes sobre o(a) afazer/rotina (na visão de um paciente)</p>
 <img src="https://i.ibb.co/dbLrVd0/Healu-to-Do-Screen-Patient-part2.png" alt="Healu-to-Do-Screen-Patient-part2" border="0">
 
@@ -82,3 +85,14 @@
 
 <p>Pesquisa por usuários</p>
 <img src="https://i.ibb.co/ZhPk55X/Healu-Search-For-Users.png" alt="Healu-Search-For-Users" border="0" height="420px">
+
+<p>Vídeo chamada</p>
+<img src="https://i.ibb.co/whjv5r8/Healu-video-Call.png" alt="Healu-video-Call" border="0">
+
+<p>Para entrar em alguma sala virtual (videochamadas e afins), basta digitar o nome de uma das salas abaixo no campo específico da tela de ligações:</p>
+
+> ```duvidas-1```
+> ```duvidas-2```
+> ```duvidas-3```
+> ```duvidas-4```
+> ```duvidas-5```
