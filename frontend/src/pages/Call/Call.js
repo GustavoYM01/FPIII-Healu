@@ -8,7 +8,7 @@ const Call = () => {
   const [room, setRoom] = useState(null);
 
   const handleSubmit = () => {
-    window.location.assign(`/video/${room}`);
+    window.open(`/video/${room}`);
   };
 
   return (

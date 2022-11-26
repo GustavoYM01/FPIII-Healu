@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { db, auth } from "../firebase/config";
 import {
   collection,
@@ -10,6 +10,9 @@ import {
 import User from "./User";
 import ArrowLeft from "../imgs/arrowLeft.svg";
 import ArrowRight from "../imgs/arrowRight.svg";
+import AddUsers from "./AddUsers";
+// import BtnAddUserNonHover from "../imgs/btnAddUserNonHover.svg";
+// import BtnAddUserHover from "../imgs/btnAddUserHover.svg";
 
 const Sidebar = () => {
   const [pacientes, setPacientes] = useState([]);
@@ -151,6 +154,15 @@ const Sidebar = () => {
           />
         </div>
       ) : null}
+      <AddUsers />
+      {/* <div id="container_btnAddUser">
+        <img
+          src={BtnAddUserNonHover}
+          id="btn_addUser"
+          onMouseOver={(e) => (e.currentTarget.src = BtnAddUserHover)}
+          onMouseOut={(e) => (e.currentTarget.src = BtnAddUserNonHover)}
+        />
+      </div> */}
       <>
         {profSaude.length > 0 && profSaude[0].isHealthProfessional === false ? (
           <>

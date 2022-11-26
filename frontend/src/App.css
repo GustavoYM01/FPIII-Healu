@@ -256,6 +256,27 @@ input[type="text"] {
   background: var(--main_darkBlue);
 }
 
+#container_confirmAddUser {
+  text-align: center;
+}
+
+#btn_confirmAddUser {
+  transition: all 0.2s;
+  margin-top: 1em;
+  height: 1.8em;
+  width: 5em;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  background: var(--main_blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+#btn_confirmAddUser:hover {
+  background: var(--main_darkBlue);
+}
+
 /************************************************** SIGN UP part **************************************************/
 
 #logo_form2 {
@@ -385,6 +406,30 @@ input[type="radio"]:checked {
   transition: 0.2s;
   overflow: auto;
   z-index: 10;
+}
+
+#container_btnAddUser {
+  margin: 50px auto 50px auto;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+#container_search {
+  text-align: center;
+}
+
+#container_search input {
+  border: 2px solid var(--main_blue);
+  border-radius: 6px;
+  width: 50%;
+  font-size: 1em;
+}
+
+#container_preSearch {
+  margin-top: 2em;
+  height: 12em;
+  overflow-y: scroll;
 }
 
 .btn_toggle {
@@ -706,6 +751,20 @@ input[type="radio"]:checked {
   border-radius: 0.5rem;
 }
 
+#modal2 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 10;
+  background-color: var(--white);
+  width: 500px;
+  height: 410px;
+  max-width: 86%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
 #label_horario input,
 #label_titulo_afazer input,
 #label_afazer input,
@@ -769,7 +828,20 @@ input[type="radio"]:checked {
   pointer-events: all;
 }
 
+#fade,
+#modal2 {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
 #modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal2.hide,
 #fade.hide {
   opacity: 0;
   pointer-events: none;
