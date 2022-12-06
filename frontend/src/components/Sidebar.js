@@ -154,8 +154,6 @@ const Sidebar = () => {
           />
         </div>
       ) : null}
-      {/* <AddUsers />
-      <div id="added_users"></div> */}
       <>
         {profSaude.length > 0 && profSaude[0].isHealthProfessional === false ? (
           <>

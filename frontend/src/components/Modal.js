@@ -28,7 +28,7 @@ const Modal = () => {
   useEffect(() => {
     // Para listar os nomes dos pacientes
     const usersRef = collection(db, "users");
-    const q = query(usersRef, where("uid", "not-in", [currentUser]));
+    const q = query(usersRef, where("isHealthProfessional", "not-in", [true]));
     const unsub = onSnapshot(q, (querySnapshot) => {
       setUsers([]);
       querySnapshot.forEach((doc) => {
